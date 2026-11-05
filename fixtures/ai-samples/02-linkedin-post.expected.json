@@ -1,0 +1,55 @@
+{
+  "sample": "02-linkedin-post",
+  "source": "synthetic",
+  "issues": [
+    {
+      "quote": "یک بازی\u200cتغییر واقعی است",
+      "category": "translationese",
+      "severity": "error",
+      "suggestion": "تحولی بنیادین به شمار می\u200cرود",
+      "explanation_fa": "گرته\u200cبرداری ناشیانه از واژه مرکب انگلیسی game-changer",
+      "must_detect": true
+    },
+    {
+      "quote": "نقش کلیدی را بازی کرد",
+      "category": "collocation",
+      "severity": "error",
+      "suggestion": "نقش کلیدی ایفا کرد",
+      "explanation_fa": "همایندی غلط فعل بازی کردن برای نقش (کالک play a role)",
+      "must_detect": true
+    },
+    {
+      "quote": "یک تفاوت بزرگ ایجاد کند",
+      "category": "translationese",
+      "severity": "error",
+      "suggestion": "تأثیر چشمگیری بگذارد",
+      "explanation_fa": "ترجمه تحت\u200cاللفظی از اصطلاح make a difference",
+      "must_detect": true
+    },
+    {
+      "quote": "ارسال کردیم پروژه نهایی را به سرورهای تولید",
+      "category": "grammar",
+      "severity": "error",
+      "suggestion": "پروژه نهایی را به سرورهای تولید ارسال کردیم",
+      "explanation_fa": "برهم خوردن ترتیب اجزای جمله فارسی و قرار گرفتن فعل قبل از مفعول صریح",
+      "must_detect": true
+    },
+    {
+      "quote": "احساسات من غرق شده است",
+      "category": "unnatural",
+      "severity": "warning",
+      "suggestion": "بسیار شگفت\u200cزده و سرشار از شوق هستم",
+      "explanation_fa": "ترجمه تحت\u200cاللفظی و غیرطبیعی از عبارت I am overwhelmed",
+      "must_detect": false
+    },
+    {
+      "quote": "توسعه\u200cدهنده نرم\u200cافزار",
+      "category": "terminology",
+      "severity": "suggestion",
+      "suggestion": "توسعه\u200cدهنده نرم\u200cافزار",
+      "explanation_fa": "ناهماهنگی اصطلاحی در متن واحد با کاربرد همزمان توسعه\u200cدهنده نرم\u200cافزار و برنامه\u200cنویس",
+      "must_detect": false
+    }
+  ],
+  "reviewed": false
+}

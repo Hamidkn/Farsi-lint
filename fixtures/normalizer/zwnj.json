@@ -1,0 +1,186 @@
+{
+  "rule": "zwnj",
+  "description_en": "Insert ZWNJ between stems and prefixes/suffixes (می/نمی، ها/های، تر/ترین، پسوندهای بعد از ه) without corrupting standalone words.",
+  "cases": [
+    {
+      "id": "zwnj-001",
+      "input": "او به مدرسه می رود.",
+      "expected": "او به مدرسه می\u200cرود.",
+      "options": {},
+      "kind": "positive",
+      "note": "Prefix می with verb stem",
+      "reviewed": false
+    },
+    {
+      "id": "zwnj-002",
+      "input": "من حقیقت را نمی دانم.",
+      "expected": "من حقیقت را نمی\u200cدانم.",
+      "options": {},
+      "kind": "positive",
+      "note": "Prefix نمی with verb stem",
+      "reviewed": false
+    },
+    {
+      "id": "zwnj-003",
+      "input": "کتاب ها روی قفسه چیده شده\u200cاند.",
+      "expected": "کتاب\u200cها روی قفسه چیده شده\u200cاند.",
+      "options": {},
+      "kind": "positive",
+      "note": "Plural suffix ها",
+      "reviewed": false
+    },
+    {
+      "id": "zwnj-004",
+      "input": "پنجره های اتاق باز هستند.",
+      "expected": "پنجره\u200cهای اتاق باز هستند.",
+      "options": {},
+      "kind": "positive",
+      "note": "Plural suffix های",
+      "reviewed": false
+    },
+    {
+      "id": "zwnj-005",
+      "input": "روزگاران سختی هایی دارد.",
+      "expected": "روزگاران سختی\u200cهایی دارد.",
+      "options": {},
+      "kind": "positive",
+      "note": "Indefinite plural suffix هایی",
+      "reviewed": false
+    },
+    {
+      "id": "zwnj-006",
+      "input": "این درخت بزرگ تر از آن است.",
+      "expected": "این درخت بزرگ\u200cتر از آن است.",
+      "options": {},
+      "kind": "positive",
+      "note": "Comparative suffix تر",
+      "reviewed": false
+    },
+    {
+      "id": "zwnj-007",
+      "input": "زیبا ترین گل بوستان",
+      "expected": "زیبا\u200cترین گل بوستان",
+      "options": {},
+      "kind": "positive",
+      "note": "Superlative suffix ترین",
+      "reviewed": false
+    },
+    {
+      "id": "zwnj-008",
+      "input": "بسیار خسته ام و نیاز به استراحت دارم.",
+      "expected": "بسیار خسته\u200cام و نیاز به استراحت دارم.",
+      "options": {},
+      "kind": "positive",
+      "note": "Suffix ام after silent heh",
+      "reviewed": false
+    },
+    {
+      "id": "zwnj-009",
+      "input": "آیا آن منظره را دیده ای؟",
+      "expected": "آیا آن منظره را دیده\u200cای؟",
+      "options": {},
+      "kind": "positive",
+      "note": "Suffix ای after silent heh",
+      "reviewed": false
+    },
+    {
+      "id": "zwnj-010",
+      "input": "به خانه ای دوردست رفتیم.",
+      "expected": "به خانه\u200cای دوردست رفتیم.",
+      "options": {},
+      "kind": "positive",
+      "note": "Indefinite noun suffix ای after silent heh",
+      "reviewed": false
+    },
+    {
+      "id": "zwnj-011",
+      "input": "آنها به شهر رسیده اند.",
+      "expected": "آنها به شهر رسیده\u200cاند.",
+      "options": {},
+      "kind": "positive",
+      "note": "Suffix اند after silent heh",
+      "reviewed": false
+    },
+    {
+      "id": "zwnj-012",
+      "input": "میز کار چوبی بسیار تمیز است.",
+      "expected": "میز کار چوبی بسیار تمیز است.",
+      "options": {},
+      "kind": "negative",
+      "note": "Word میز must not be split with ZWNJ",
+      "reviewed": false
+    },
+    {
+      "id": "zwnj-013",
+      "input": "میوه تازه در سبد چیده شد.",
+      "expected": "میوه تازه در سبد چیده شد.",
+      "options": {},
+      "kind": "negative",
+      "note": "Word میوه must not be split with ZWNJ",
+      "reviewed": false
+    },
+    {
+      "id": "zwnj-014",
+      "input": "میهن دوستی از ویژگی\u200cهای ارزنده است.",
+      "expected": "میهن دوستی از ویژگی\u200cهای ارزنده است.",
+      "options": {},
+      "kind": "negative",
+      "note": "Word میهن must not be split with ZWNJ",
+      "reviewed": false
+    },
+    {
+      "id": "zwnj-015",
+      "input": "دانه درشت هایل بر زمین بارید.",
+      "expected": "دانه درشت هایل بر زمین بارید.",
+      "options": {},
+      "kind": "negative",
+      "note": "Root word هایل must not be treated as plural suffix",
+      "reviewed": false
+    },
+    {
+      "id": "zwnj-016",
+      "input": "ترانه دلنشین به گوش می\u200cرسید.",
+      "expected": "ترانه دلنشین به گوش می\u200cرسید.",
+      "options": {},
+      "kind": "negative",
+      "note": "Word ترانه starting with تر must not be split",
+      "reviewed": false
+    },
+    {
+      "id": "zwnj-017",
+      "input": "بستر نرم و راحت رودخانه",
+      "expected": "بستر نرم و راحت رودخانه",
+      "options": {},
+      "kind": "negative",
+      "note": "Word بستر ending with تر must not be split",
+      "reviewed": false
+    },
+    {
+      "id": "zwnj-018",
+      "input": "تناسب اندام اهمیت فراوانی دارد.",
+      "expected": "تناسب اندام اهمیت فراوانی دارد.",
+      "options": {},
+      "kind": "negative",
+      "note": "Word اندام must not be split with ZWNJ",
+      "reviewed": false
+    },
+    {
+      "id": "zwnj-019",
+      "input": "ماهی قرمز در آب شنا می\u200cکند.",
+      "expected": "ماهی قرمز در آب شنا می\u200cکند.",
+      "options": {},
+      "kind": "negative",
+      "note": "Word ماهی must not be treated as heh+ye",
+      "reviewed": false
+    },
+    {
+      "id": "zwnj-020",
+      "input": "کتابی ارزشمند درباره تاریخ ایران",
+      "expected": "کتابی ارزشمند درباره تاریخ ایران",
+      "options": {},
+      "kind": "negative",
+      "note": "Word کتابی with standard ya must not receive ZWNJ",
+      "reviewed": false
+    }
+  ]
+}

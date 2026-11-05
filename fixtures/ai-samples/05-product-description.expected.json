@@ -1,0 +1,47 @@
+{
+  "sample": "05-product-description",
+  "source": "synthetic",
+  "issues": [
+    {
+      "quote": "بازی را تغییر دهید با این هدفون",
+      "category": "translationese",
+      "severity": "error",
+      "suggestion": "تجربه\u200cای کاملاً متمایز با این هدفون داشته باشید",
+      "explanation_fa": "گرته\u200cبرداری تبلیغاتی از عبارت change the game",
+      "must_detect": true
+    },
+    {
+      "quote": "در پایان روز کیفیت صدا تنها چیزی است که",
+      "category": "translationese",
+      "severity": "error",
+      "suggestion": "در نهایت کیفیت صدا تنها عاملی است که",
+      "explanation_fa": "گرته\u200cبرداری مستقیم از اصطلاح انگلیسی at the end of the day",
+      "must_detect": true
+    },
+    {
+      "quote": "کیفیت صدای شفاف و بی\u200cپایان",
+      "category": "collocation",
+      "severity": "error",
+      "suggestion": "کیفیت صدای شفاف و بی\u200cنقص",
+      "explanation_fa": "همایندی نامفهوم و غیرطبیعی صفت بی\u200cپایان برای کیفیت صدا",
+      "must_detect": true
+    },
+    {
+      "quote": "باتری آن قادر به ارائه ده ساعت پخش مداوم است",
+      "category": "unnatural",
+      "severity": "warning",
+      "suggestion": "باتری آن تا ده ساعت پخش مداوم را پشتیبانی می\u200cکند",
+      "explanation_fa": "ترجمه ثقیل و مصنوعی از ساختار is capable of providing",
+      "must_detect": false
+    },
+    {
+      "quote": "طول عمر باتری",
+      "category": "terminology",
+      "severity": "suggestion",
+      "suggestion": "دوام باتری",
+      "explanation_fa": "ناهماهنگی اصطلاحی با کاربرد همزمان دوام باتری و طول عمر باتری برای مفهوم میزان شارژدهی",
+      "must_detect": false
+    }
+  ],
+  "reviewed": false
+}

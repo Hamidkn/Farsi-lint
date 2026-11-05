@@ -1,0 +1,150 @@
+{
+  "rule": "brackets-spacing",
+  "description_en": "Enforce one space outside and no space inside brackets: () [] «». Protect code and Markdown.",
+  "cases": [
+    {
+      "id": "brackets-spacing-001",
+      "input": "کتاب ( گلستان ) ارزشمند است.",
+      "expected": "کتاب (گلستان) ارزشمند است.",
+      "options": {},
+      "kind": "positive",
+      "note": "Remove spaces inside parentheses",
+      "reviewed": false
+    },
+    {
+      "id": "brackets-spacing-002",
+      "input": "پروژه [ فاز اول ] تمام شد.",
+      "expected": "پروژه [فاز اول] تمام شد.",
+      "options": {},
+      "kind": "positive",
+      "note": "Remove spaces inside square brackets",
+      "reviewed": false
+    },
+    {
+      "id": "brackets-spacing-003",
+      "input": "متن « نقل قول » زیباست.",
+      "expected": "متن «نقل قول» زیباست.",
+      "options": {},
+      "kind": "positive",
+      "note": "Remove spaces inside guillemets",
+      "reviewed": false
+    },
+    {
+      "id": "brackets-spacing-004",
+      "input": "کلمه(توضیح بیشتر)",
+      "expected": "کلمه (توضیح بیشتر)",
+      "options": {},
+      "kind": "positive",
+      "note": "Add missing space before opening parenthesis",
+      "reviewed": false
+    },
+    {
+      "id": "brackets-spacing-005",
+      "input": "کلمه[پاورقی شماره یک]",
+      "expected": "کلمه [پاورقی شماره یک]",
+      "options": {},
+      "kind": "positive",
+      "note": "Add missing space before opening bracket",
+      "reviewed": false
+    },
+    {
+      "id": "brackets-spacing-006",
+      "input": "نکته«مهم و کلیدی»",
+      "expected": "نکته «مهم و کلیدی»",
+      "options": {},
+      "kind": "positive",
+      "note": "Add missing space before opening guillemet",
+      "reviewed": false
+    },
+    {
+      "id": "brackets-spacing-007",
+      "input": "( متن آزمایشی ) در پرانتز",
+      "expected": "(متن آزمایشی) در پرانتز",
+      "options": {},
+      "kind": "positive",
+      "note": "Remove spaces inside parentheses at line start",
+      "reviewed": false
+    },
+    {
+      "id": "brackets-spacing-008",
+      "input": "« گیومه باز و بسته » با فاصله",
+      "expected": "«گیومه باز و بسته» با فاصله",
+      "options": {},
+      "kind": "positive",
+      "note": "Remove inner spaces from guillemets",
+      "reviewed": false
+    },
+    {
+      "id": "brackets-spacing-009",
+      "input": "[ یادداشت اول ] نوشته شد.",
+      "expected": "[یادداشت اول] نوشته شد.",
+      "options": {},
+      "kind": "positive",
+      "note": "Remove inner spaces from square brackets",
+      "reviewed": false
+    },
+    {
+      "id": "brackets-spacing-010",
+      "input": "تابع foo(x) در برنامه فراخوانی شد.",
+      "expected": "تابع foo(x) در برنامه فراخوانی شد.",
+      "options": {},
+      "kind": "negative",
+      "note": "Function call syntax foo(x) preserved",
+      "reviewed": false
+    },
+    {
+      "id": "brackets-spacing-011",
+      "input": "آرایه arr[0] عنصر اول است.",
+      "expected": "آرایه arr[0] عنصر اول است.",
+      "options": {},
+      "kind": "negative",
+      "note": "Array subscript arr[0] preserved",
+      "reviewed": false
+    },
+    {
+      "id": "brackets-spacing-012",
+      "input": "پیوند [عنوان](https://example.com) در متن",
+      "expected": "پیوند [عنوان](https://example.com) در متن",
+      "options": {},
+      "kind": "negative",
+      "note": "Markdown link syntax preserved",
+      "reviewed": false
+    },
+    {
+      "id": "brackets-spacing-013",
+      "input": "الگوی regex شامل (?:abc) است.",
+      "expected": "الگوی regex شامل (?:abc) است.",
+      "options": {},
+      "kind": "negative",
+      "note": "Regular expression non-capturing group preserved",
+      "reviewed": false
+    },
+    {
+      "id": "brackets-spacing-014",
+      "input": "دانشگاه تهران (تأسیس ۱۳۱۳) کهن\u200cترین دانشگاه مدرن ایران است.",
+      "expected": "دانشگاه تهران (تأسیس ۱۳۱۳) کهن\u200cترین دانشگاه مدرن ایران است.",
+      "options": {},
+      "kind": "negative",
+      "note": "Already correctly spaced parentheses preserved",
+      "reviewed": false
+    },
+    {
+      "id": "brackets-spacing-015",
+      "input": "بند سوم [قانون اساسی] را مطالعه کنید.",
+      "expected": "بند سوم [قانون اساسی] را مطالعه کنید.",
+      "options": {},
+      "kind": "negative",
+      "note": "Already correctly spaced square brackets preserved",
+      "reviewed": false
+    },
+    {
+      "id": "brackets-spacing-016",
+      "input": "کتاب «گلستان» شاهکار نثر فارسی است.",
+      "expected": "کتاب «گلستان» شاهکار نثر فارسی است.",
+      "options": {},
+      "kind": "negative",
+      "note": "Already correctly spaced guillemets preserved",
+      "reviewed": false
+    }
+  ]
+}

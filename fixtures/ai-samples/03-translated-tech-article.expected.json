@@ -1,0 +1,55 @@
+{
+  "sample": "03-translated-tech-article",
+  "source": "synthetic",
+  "issues": [
+    {
+      "quote": "حس می\u200cسازد",
+      "category": "translationese",
+      "severity": "error",
+      "suggestion": "کاملاً منطقی به نظر می\u200cرسد",
+      "explanation_fa": "ترجمه کلمه\u200cبه\u200cکلمه و بی\u200cمعنی از اصطلاح make sense",
+      "must_detect": true
+    },
+    {
+      "quote": "در حالی که این الگو استقلال عملیاتی بالایی به ارمغان می\u200cآورد،",
+      "category": "translationese",
+      "severity": "error",
+      "suggestion": "اگرچه این الگو استقلال عملیاتی بالایی به ارمغان می\u200cآورد، اما",
+      "explanation_fa": "گرته\u200cبرداری ساختاری از کاربرد تقابلی while در زبان انگلیسی",
+      "must_detect": true
+    },
+    {
+      "quote": "عملکرد بالایی را به نمایش بگذارد",
+      "category": "unnatural",
+      "severity": "warning",
+      "suggestion": "کارایی بالایی داشته باشد",
+      "explanation_fa": "کاربرد عبارت متکلف و غیرطبیعی برای بیان راندمان سیستم",
+      "must_detect": true
+    },
+    {
+      "quote": "پیچیدگی زیرساخت را افزایش دادن",
+      "category": "grammar",
+      "severity": "error",
+      "suggestion": "پیچیدگی زیرساخت را افزایش دهد",
+      "explanation_fa": "به\u200cکارگیری نادرست مصدر به جای فعل التزامی متصرف در بند پیرو",
+      "must_detect": true
+    },
+    {
+      "quote": "توسط سرویس\u200cها پردازش می\u200cشوند",
+      "category": "grammar",
+      "severity": "warning",
+      "suggestion": "سرویس\u200cها پردازش می\u200cکنند",
+      "explanation_fa": "استفاده از مجهول همراه با فاعل به شیوه ترجمه انگلیسی",
+      "must_detect": false
+    },
+    {
+      "quote": "دیتابیس",
+      "category": "terminology",
+      "severity": "warning",
+      "suggestion": "پایگاه داده",
+      "explanation_fa": "ناهماهنگی اصطلاحی در متن؛ کاربرد همزمان دیتابیس و پایگاه داده",
+      "must_detect": false
+    }
+  ],
+  "reviewed": false
+}

@@ -1,0 +1,226 @@
+{
+  "rule": "digits",
+  "description_en": "Convert Arabic-Indic and ASCII digits to Persian digits when configured, protecting digits in code, URLs, version numbers, and Latin words.",
+  "cases": [
+    {
+      "id": "digits-001",
+      "input": "در سال 1403 فارغ\u200cالتحصیل شد.",
+      "expected": "در سال ۱۴۰۳ فارغ\u200cالتحصیل شد.",
+      "options": {
+        "digits": "persian"
+      },
+      "kind": "positive",
+      "note": "Convert 4-digit English year to Persian digits",
+      "reviewed": false
+    },
+    {
+      "id": "digits-002",
+      "input": "تعداد 25 نفر شرکت کردند.",
+      "expected": "تعداد ۲۵ نفر شرکت کردند.",
+      "options": {
+        "digits": "persian"
+      },
+      "kind": "positive",
+      "note": "Convert English count to Persian digits",
+      "reviewed": false
+    },
+    {
+      "id": "digits-003",
+      "input": "قیمت آن 50000 تومان است.",
+      "expected": "قیمت آن ۵۰۰۰۰ تومان است.",
+      "options": {
+        "digits": "persian"
+      },
+      "kind": "positive",
+      "note": "Convert Persian price digits",
+      "reviewed": false
+    },
+    {
+      "id": "digits-004",
+      "input": "در روز 12 فروردین ماه",
+      "expected": "در روز ۱۲ فروردین ماه",
+      "options": {
+        "digits": "persian"
+      },
+      "kind": "positive",
+      "note": "Calendar day conversion",
+      "reviewed": false
+    },
+    {
+      "id": "digits-005",
+      "input": "قیمت ٥٠٠ تومان است.",
+      "expected": "قیمت ۵۰۰ تومان است.",
+      "options": {
+        "digits": "persian"
+      },
+      "kind": "positive",
+      "note": "Convert Arabic-Indic digits ٥٠٠ to Persian ۵۰۰",
+      "reviewed": false
+    },
+    {
+      "id": "digits-006",
+      "input": "در سال ١٤٠٢ خورشیدی",
+      "expected": "در سال ۱۴۰۲ خورشیدی",
+      "options": {
+        "digits": "persian"
+      },
+      "kind": "positive",
+      "note": "Convert Arabic-Indic year to Persian",
+      "reviewed": false
+    },
+    {
+      "id": "digits-007",
+      "input": "کد ملی ثبت\u200cشده ٩٨ است.",
+      "expected": "کد ملی ثبت\u200cشده ۹۸ است.",
+      "options": {
+        "digits": "persian"
+      },
+      "kind": "positive",
+      "note": "Convert Arabic-Indic digits ٩٨",
+      "reviewed": false
+    },
+    {
+      "id": "digits-008",
+      "input": "اتاق شماره 7 طبقه 3",
+      "expected": "اتاق شماره ۷ طبقه ۳",
+      "options": {
+        "digits": "persian"
+      },
+      "kind": "positive",
+      "note": "Multiple single digits in sentence",
+      "reviewed": false
+    },
+    {
+      "id": "digits-009",
+      "input": "صفحه 120 از 350 کتاب",
+      "expected": "صفحه ۱۲۰ از ۳۵۰ کتاب",
+      "options": {
+        "digits": "persian"
+      },
+      "kind": "positive",
+      "note": "Page numbers conversion",
+      "reviewed": false
+    },
+    {
+      "id": "digits-010",
+      "input": "در سال 1403 هستیم.",
+      "expected": "در سال 1403 هستیم.",
+      "options": {
+        "digits": "keep"
+      },
+      "kind": "negative",
+      "note": "Option digits=keep leaves English digits unchanged",
+      "reviewed": false
+    },
+    {
+      "id": "digits-011",
+      "input": "فایل صوتی با پسوند MP3 ذخیره شد.",
+      "expected": "فایل صوتی با پسوند MP3 ذخیره شد.",
+      "options": {
+        "digits": "persian"
+      },
+      "kind": "negative",
+      "note": "Digits inside English technical word MP3 must not change",
+      "reviewed": false
+    },
+    {
+      "id": "digits-012",
+      "input": "رمزگذاری استاندارد UTF8 است.",
+      "expected": "رمزگذاری استاندارد UTF8 است.",
+      "options": {
+        "digits": "persian"
+      },
+      "kind": "negative",
+      "note": "Digits in UTF8 must not change",
+      "reviewed": false
+    },
+    {
+      "id": "digits-013",
+      "input": "نسخه جدید v2.1 منتشر گردید.",
+      "expected": "نسخه جدید v2.1 منتشر گردید.",
+      "options": {
+        "digits": "persian"
+      },
+      "kind": "negative",
+      "note": "Version number v2.1 must not change",
+      "reviewed": false
+    },
+    {
+      "id": "digits-014",
+      "input": "برنامه به نگارش 3.5.0 ارتقا یافت.",
+      "expected": "برنامه به نگارش 3.5.0 ارتقا یافت.",
+      "options": {
+        "digits": "persian"
+      },
+      "kind": "negative",
+      "note": "Semantic version number 3.5.0 must not change",
+      "reviewed": false
+    },
+    {
+      "id": "digits-015",
+      "input": "آدرس وبگاه https://example.com/item/123 است.",
+      "expected": "آدرس وبگاه https://example.com/item/123 است.",
+      "options": {
+        "digits": "persian"
+      },
+      "kind": "negative",
+      "note": "Digits inside URL must not change",
+      "reviewed": false
+    },
+    {
+      "id": "digits-016",
+      "input": "پیام را به info@domain123.com بفرستید.",
+      "expected": "پیام را به info@domain123.com بفرستید.",
+      "options": {
+        "digits": "persian"
+      },
+      "kind": "negative",
+      "note": "Digits inside email address must not change",
+      "reviewed": false
+    },
+    {
+      "id": "digits-017",
+      "input": "زمان ثبت گزارش 2024-11-05T08:00:00Z بود.",
+      "expected": "زمان ثبت گزارش 2024-11-05T08:00:00Z بود.",
+      "options": {
+        "digits": "persian"
+      },
+      "kind": "negative",
+      "note": "ISO timestamp in Latin format must remain unchanged",
+      "reviewed": false
+    },
+    {
+      "id": "digits-018",
+      "input": "تماس با شماره Call +1-800-555-0199 now فوری",
+      "expected": "تماس با شماره Call +1-800-555-0199 now فوری",
+      "options": {
+        "digits": "persian"
+      },
+      "kind": "negative",
+      "note": "Phone number in Latin context must remain unchanged",
+      "reviewed": false
+    },
+    {
+      "id": "digits-019",
+      "input": "دستور const port = 3000; در جاوااسکریپت",
+      "expected": "دستور const port = 3000; در جاوااسکریپت",
+      "options": {
+        "digits": "persian"
+      },
+      "kind": "negative",
+      "note": "Port number in code context must remain unchanged",
+      "reviewed": false
+    },
+    {
+      "id": "digits-020",
+      "input": "کتابخانه React19 در دسترس است.",
+      "expected": "کتابخانه React19 در دسترس است.",
+      "options": {
+        "digits": "persian"
+      },
+      "kind": "negative",
+      "note": "Alphanumeric technology brand React19 must remain unchanged",
+      "reviewed": false
+    }
+  ]
+}

@@ -1,0 +1,186 @@
+{
+  "rule": "arabic-letters",
+  "description_en": "Convert Arabic Yeh (ي/ى) and Kaf (ك) to Persian counterparts (ی/ک) while preserving standard Persian hamza spellings.",
+  "cases": [
+    {
+      "id": "arabic-letters-001",
+      "input": "علي به مدرسه رفت.",
+      "expected": "علی به مدرسه رفت.",
+      "options": {},
+      "kind": "positive",
+      "note": "Arabic Yeh at word end",
+      "reviewed": false
+    },
+    {
+      "id": "arabic-letters-002",
+      "input": "كتاب را باز كرد.",
+      "expected": "کتاب را باز کرد.",
+      "options": {},
+      "kind": "positive",
+      "note": "Arabic Kaf at word beginning and inside",
+      "reviewed": false
+    },
+    {
+      "id": "arabic-letters-003",
+      "input": "تاريك و نمناك بود.",
+      "expected": "تاریک و نمناک بود.",
+      "options": {},
+      "kind": "positive",
+      "note": "Arabic Kaf at word end",
+      "reviewed": false
+    },
+    {
+      "id": "arabic-letters-004",
+      "input": "پزشكي علمي دقيق است.",
+      "expected": "پزشکی علمی دقیق است.",
+      "options": {},
+      "kind": "positive",
+      "note": "Arabic Yeh in medial and final positions",
+      "reviewed": false
+    },
+    {
+      "id": "arabic-letters-005",
+      "input": "حركت سريع لاك\u200cپشت",
+      "expected": "حرکت سریع لاک\u200cپشت",
+      "options": {},
+      "kind": "positive",
+      "note": "Arabic Kaf in common Persian words",
+      "reviewed": false
+    },
+    {
+      "id": "arabic-letters-006",
+      "input": "موسي و عيسي",
+      "expected": "موسی و عیسی",
+      "options": {},
+      "kind": "positive",
+      "note": "Arabic Alef Maksura to Persian Yeh",
+      "reviewed": false
+    },
+    {
+      "id": "arabic-letters-007",
+      "input": "كودك در بانك بود.",
+      "expected": "کودک در بانک بود.",
+      "options": {},
+      "kind": "positive",
+      "note": "Multiple Arabic Kaf occurrences",
+      "reviewed": false
+    },
+    {
+      "id": "arabic-letters-008",
+      "input": "ديكته و نقاشي",
+      "expected": "دیکته و نقاشی",
+      "options": {},
+      "kind": "positive",
+      "note": "Arabic Kaf and Yeh in compound sentence",
+      "reviewed": false
+    },
+    {
+      "id": "arabic-letters-009",
+      "input": "يك برگ خشك",
+      "expected": "یک برگ خشک",
+      "options": {},
+      "kind": "positive",
+      "note": "Arabic Kaf at beginning and end",
+      "reviewed": false
+    },
+    {
+      "id": "arabic-letters-010",
+      "input": "بزرگي و شكوه",
+      "expected": "بزرگی و شکوه",
+      "options": {},
+      "kind": "positive",
+      "note": "Arabic Yeh and Kaf in coordinated nouns",
+      "reviewed": false
+    },
+    {
+      "id": "arabic-letters-011",
+      "input": "مسئله حل شد.",
+      "expected": "مسئله حل شد.",
+      "options": {},
+      "kind": "negative",
+      "note": "Standard Persian spelling of مسئله must not be modified",
+      "reviewed": false
+    },
+    {
+      "id": "arabic-letters-012",
+      "input": "مسأله حل شد.",
+      "expected": "مسأله حل شد.",
+      "options": {},
+      "kind": "negative",
+      "note": "Alternative accepted Persian spelling مسأله must remain untouched",
+      "reviewed": false
+    },
+    {
+      "id": "arabic-letters-013",
+      "input": "رئیس اداره آمد.",
+      "expected": "رئیس اداره آمد.",
+      "options": {},
+      "kind": "negative",
+      "note": "Persian hamza in رئیس must remain untouched",
+      "reviewed": false
+    },
+    {
+      "id": "arabic-letters-014",
+      "input": "تأثیر مثبت بر جامعه",
+      "expected": "تأثیر مثبت بر جامعه",
+      "options": {},
+      "kind": "negative",
+      "note": "Persian alef hamza in تأثیر must remain untouched",
+      "reviewed": false
+    },
+    {
+      "id": "arabic-letters-015",
+      "input": "مؤلف کتاب حاضر",
+      "expected": "مؤلف کتاب حاضر",
+      "options": {},
+      "kind": "negative",
+      "note": "Persian waw hamza in مؤلف must remain untouched",
+      "reviewed": false
+    },
+    {
+      "id": "arabic-letters-016",
+      "input": "دایره\u200cالمعارف بزرگ اسلامی",
+      "expected": "دایره\u200cالمعارف بزرگ اسلامی",
+      "options": {},
+      "kind": "negative",
+      "note": "Correct Persian loanword with ayn and ezafe",
+      "reviewed": false
+    },
+    {
+      "id": "arabic-letters-017",
+      "input": "کتاب و دفتر من روی میز است.",
+      "expected": "کتاب و دفتر من روی میز است.",
+      "options": {},
+      "kind": "negative",
+      "note": "Already correct Persian kaf and yeh",
+      "reviewed": false
+    },
+    {
+      "id": "arabic-letters-018",
+      "input": "خیابان\u200cهای تمیز و چراغ\u200cهای روشن",
+      "expected": "خیابان\u200cهای تمیز و چراغ\u200cهای روشن",
+      "options": {},
+      "kind": "negative",
+      "note": "Already clean Persian text with proper letters",
+      "reviewed": false
+    },
+    {
+      "id": "arabic-letters-019",
+      "input": "پژوهشگاه فرهنگ و اندیشه اسلامی",
+      "expected": "پژوهشگاه فرهنگ و اندیشه اسلامی",
+      "options": {},
+      "kind": "negative",
+      "note": "Proper Persian institution name already correct",
+      "reviewed": false
+    },
+    {
+      "id": "arabic-letters-020",
+      "input": "هیئت مدیره تشکیل جلسه داد.",
+      "expected": "هیئت مدیره تشکیل جلسه داد.",
+      "options": {},
+      "kind": "negative",
+      "note": "Accepted Persian spelling of هیئت must not change",
+      "reviewed": false
+    }
+  ]
+}

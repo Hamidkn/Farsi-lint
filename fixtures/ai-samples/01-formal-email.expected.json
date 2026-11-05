@@ -1,0 +1,55 @@
+{
+  "sample": "01-formal-email",
+  "source": "synthetic",
+  "issues": [
+    {
+      "quote": "در پایان روز",
+      "category": "translationese",
+      "severity": "error",
+      "suggestion": "در نهایت",
+      "explanation_fa": "گرته\u200cبرداری مستقیم از اصطلاح انگلیسی at the end of the day",
+      "must_detect": true
+    },
+    {
+      "quote": "بر روی یک صفحه یکسان هستیم",
+      "category": "translationese",
+      "severity": "error",
+      "suggestion": "دیدگاه مشترکی داریم",
+      "explanation_fa": "ترجمه تحت\u200cاللفظی از عبارت on the same page",
+      "must_detect": true
+    },
+    {
+      "quote": "یک تصمیم مهم را بسازیم",
+      "category": "collocation",
+      "severity": "error",
+      "suggestion": "تصمیم مهمی بگیریم",
+      "explanation_fa": "همایندی نادرست فعل ساختن با تصمیم (کالک make a decision)",
+      "must_detect": true
+    },
+    {
+      "quote": "توسط تیم فنی ما تهیه و تکمیل شد",
+      "category": "grammar",
+      "severity": "warning",
+      "suggestion": "تیم فنی ما تهیه و تکمیل کرد",
+      "explanation_fa": "کاربرد ساختار مجهول انگلیسی با حرف اضافه توسط به جای ساختار معلوم طبیعی",
+      "must_detect": true
+    },
+    {
+      "quote": "لازم به ذکر و یادآوری مجدد است که باید توجه داشت که",
+      "category": "redundancy",
+      "severity": "suggestion",
+      "suggestion": "شایان ذکر است که",
+      "explanation_fa": "اطناب و حشو بیهوده در آغاز جمله اداری",
+      "must_detect": false
+    },
+    {
+      "quote": "نگاه به جلو داریم",
+      "category": "translationese",
+      "severity": "warning",
+      "suggestion": "مشتاقانه منتظریم",
+      "explanation_fa": "گرته\u200cبرداری از عبارت انگلیسی look forward to",
+      "must_detect": false
+    }
+  ],
+  "reviewed": false
+}

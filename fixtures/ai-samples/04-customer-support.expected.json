@@ -1,0 +1,47 @@
+{
+  "sample": "04-customer-support",
+  "source": "synthetic",
+  "issues": [
+    {
+      "quote": "ما عمیقاً متأسف هستیم برای هر ناراحتی که این موضوع ممکن است سبب شده باشد",
+      "category": "translationese",
+      "severity": "error",
+      "suggestion": "از بابت مشکل پیش\u200cآمده صمیمانه پوزش می\u200cطلبیم",
+      "explanation_fa": "ترجمه لفظی و گرته\u200cبرداری\u200cشده از کلیشه انگلیسی We are deeply sorry for any inconvenience...",
+      "must_detect": true
+    },
+    {
+      "quote": "یک چشم روی سفارش خود نگه دارید",
+      "category": "translationese",
+      "severity": "error",
+      "suggestion": "وضعیت سفارش خود را پیگیری کنید",
+      "explanation_fa": "ترجمه مضحک و تحت\u200cاللفظی از اصطلاح keep an eye on",
+      "must_detect": true
+    },
+    {
+      "quote": "پرداختن توجه کامل به بازخورد",
+      "category": "collocation",
+      "severity": "error",
+      "suggestion": "توجه ویژه به بازخورد",
+      "explanation_fa": "همایندی غلط پرداختن برای توجه (کالک pay attention)",
+      "must_detect": true
+    },
+    {
+      "quote": "در حال حاضر در دست اقدام است توسط بخش انبارداری",
+      "category": "grammar",
+      "severity": "warning",
+      "suggestion": "در بخش انبارداری در دست اقدام است",
+      "explanation_fa": "ترتیب ناهمگون اجزای جمله و کاربرد متمم عاملی توسط پس از مسند",
+      "must_detect": false
+    },
+    {
+      "quote": "امیدواریم شما یک روز شگفت\u200cانگیز داشته باشید",
+      "category": "unnatural",
+      "severity": "warning",
+      "suggestion": "با آرزوی اوقاتی خوش برای شما",
+      "explanation_fa": "گرته\u200cبرداری غیرفارسی از تعارف انگلیسی Have a wonderful day",
+      "must_detect": false
+    }
+  ],
+  "reviewed": false
+}

@@ -1,0 +1,150 @@
+{
+  "rule": "kashida",
+  "description_en": "Remove decorative kashida (tatweel U+0640) from Persian words.",
+  "cases": [
+    {
+      "id": "kashida-001",
+      "input": "ســـلام دوستان",
+      "expected": "سلام دوستان",
+      "options": {},
+      "kind": "positive",
+      "note": "Remove kashida from سلام",
+      "reviewed": false
+    },
+    {
+      "id": "kashida-002",
+      "input": "با احــــترام فراوان",
+      "expected": "با احترام فراوان",
+      "options": {},
+      "kind": "positive",
+      "note": "Remove kashida from احترام",
+      "reviewed": false
+    },
+    {
+      "id": "kashida-003",
+      "input": "شهر بـــــزرگ",
+      "expected": "شهر بزرگ",
+      "options": {},
+      "kind": "positive",
+      "note": "Remove kashida from بزرگ",
+      "reviewed": false
+    },
+    {
+      "id": "kashida-004",
+      "input": "زبان فـــــارسی",
+      "expected": "زبان فارسی",
+      "options": {},
+      "kind": "positive",
+      "note": "Remove kashida from فارسی",
+      "reviewed": false
+    },
+    {
+      "id": "kashida-005",
+      "input": "شهر تـــــهران",
+      "expected": "شهر تهران",
+      "options": {},
+      "kind": "positive",
+      "note": "Remove kashida from تهران",
+      "reviewed": false
+    },
+    {
+      "id": "kashida-006",
+      "input": "استاد دانـــــشگاه",
+      "expected": "استاد دانشگاه",
+      "options": {},
+      "kind": "positive",
+      "note": "Remove kashida from دانشگاه",
+      "reviewed": false
+    },
+    {
+      "id": "kashida-007",
+      "input": "مطالعه کتـــــاب",
+      "expected": "مطالعه کتاب",
+      "options": {},
+      "kind": "positive",
+      "note": "Remove kashida from کتاب",
+      "reviewed": false
+    },
+    {
+      "id": "kashida-008",
+      "input": "کسب موفـــــقیت",
+      "expected": "کسب موفقیت",
+      "options": {},
+      "kind": "positive",
+      "note": "Remove kashida from موفقیت",
+      "reviewed": false
+    },
+    {
+      "id": "kashida-009",
+      "input": "همراه و دوســـــت قدیمی",
+      "expected": "همراه و دوست قدیمی",
+      "options": {},
+      "kind": "positive",
+      "note": "Remove kashida from دوست",
+      "reviewed": false
+    },
+    {
+      "id": "kashida-010",
+      "input": "سلام بر شما و درود بر روان پاک نیاکان",
+      "expected": "سلام بر شما و درود بر روان پاک نیاکان",
+      "options": {},
+      "kind": "negative",
+      "note": "Correct text without kashida preserved",
+      "reviewed": false
+    },
+    {
+      "id": "kashida-011",
+      "input": "کتابخانه ملی جمهوری اسلامی ایران",
+      "expected": "کتابخانه ملی جمهوری اسلامی ایران",
+      "options": {},
+      "kind": "negative",
+      "note": "Proper name without kashida preserved",
+      "reviewed": false
+    },
+    {
+      "id": "kashida-012",
+      "input": "دانشگاه فردوسی مشهد از مراکز کهن دانش است.",
+      "expected": "دانشگاه فردوسی مشهد از مراکز کهن دانش است.",
+      "options": {},
+      "kind": "negative",
+      "note": "Academic prose without kashida preserved",
+      "reviewed": false
+    },
+    {
+      "id": "kashida-013",
+      "input": "فرهنگستان زبان و ادب فارسی قوانین مصوب دارد.",
+      "expected": "فرهنگستان زبان و ادب فارسی قوانین مصوب دارد.",
+      "options": {},
+      "kind": "negative",
+      "note": "Standard sentence without kashida preserved",
+      "reviewed": false
+    },
+    {
+      "id": "kashida-014",
+      "input": "ادبیات کهن و معاصر گنجینه\u200cای ارزشمند است.",
+      "expected": "ادبیات کهن و معاصر گنجینه\u200cای ارزشمند است.",
+      "options": {},
+      "kind": "negative",
+      "note": "Prose without kashida preserved",
+      "reviewed": false
+    },
+    {
+      "id": "kashida-015",
+      "input": "پژوهش علمی و دقیق نیازمند شکیبایی است.",
+      "expected": "پژوهش علمی و دقیق نیازمند شکیبایی است.",
+      "options": {},
+      "kind": "negative",
+      "note": "Scientific prose without kashida preserved",
+      "reviewed": false
+    },
+    {
+      "id": "kashida-016",
+      "input": "خط نستعلیق اصیل\u200cترین شیوه خوشنویسی ایرانی است.",
+      "expected": "خط نستعلیق اصیل\u200cترین شیوه خوشنویسی ایرانی است.",
+      "options": {},
+      "kind": "negative",
+      "note": "Calligraphy description without kashida preserved",
+      "reviewed": false
+    }
+  ]
+}

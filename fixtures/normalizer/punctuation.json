@@ -1,0 +1,168 @@
+{
+  "rule": "punctuation",
+  "description_en": "Convert ASCII punctuation (, ; ?) to Persian counterparts (، ؛ ؟) and enforce one space after and none before.",
+  "cases": [
+    {
+      "id": "punctuation-001",
+      "input": "سیب, گلابی, پرتقال",
+      "expected": "سیب، گلابی، پرتقال",
+      "options": {},
+      "kind": "positive",
+      "note": "English comma to Persian comma",
+      "reviewed": false
+    },
+    {
+      "id": "punctuation-002",
+      "input": "امروز شنبه است; فردا یکشنبه است.",
+      "expected": "امروز شنبه است؛ فردا یکشنبه است.",
+      "options": {},
+      "kind": "positive",
+      "note": "English semicolon to Persian semicolon",
+      "reviewed": false
+    },
+    {
+      "id": "punctuation-003",
+      "input": "آیا شما آمدید?",
+      "expected": "آیا شما آمدید؟",
+      "options": {},
+      "kind": "positive",
+      "note": "English question mark to Persian question mark",
+      "reviewed": false
+    },
+    {
+      "id": "punctuation-004",
+      "input": "سلام،من امروز آمدم.",
+      "expected": "سلام، من امروز آمدم.",
+      "options": {},
+      "kind": "positive",
+      "note": "Add missing space after Persian comma",
+      "reviewed": false
+    },
+    {
+      "id": "punctuation-005",
+      "input": "رفت؛اما زود برگشت.",
+      "expected": "رفت؛ اما زود برگشت.",
+      "options": {},
+      "kind": "positive",
+      "note": "Add missing space after Persian semicolon",
+      "reviewed": false
+    },
+    {
+      "id": "punctuation-006",
+      "input": "کجا رفتی؟خانه بودم.",
+      "expected": "کجا رفتی؟ خانه بودم.",
+      "options": {},
+      "kind": "positive",
+      "note": "Add missing space after Persian question mark",
+      "reviewed": false
+    },
+    {
+      "id": "punctuation-007",
+      "input": "ایران ,تهران",
+      "expected": "ایران، تهران",
+      "options": {},
+      "kind": "positive",
+      "note": "Convert comma and fix surrounding spacing",
+      "reviewed": false
+    },
+    {
+      "id": "punctuation-008",
+      "input": "دانشجو ,استاد",
+      "expected": "دانشجو، استاد",
+      "options": {},
+      "kind": "positive",
+      "note": "Fix punctuation spacing between words",
+      "reviewed": false
+    },
+    {
+      "id": "punctuation-009",
+      "input": "چرا?زیرا باران می\u200cبارید.",
+      "expected": "چرا؟ زیرا باران می\u200cبارید.",
+      "options": {},
+      "kind": "positive",
+      "note": "Convert question mark and insert space",
+      "reviewed": false
+    },
+    {
+      "id": "punctuation-010",
+      "input": "او گفت:من اینجا هستم.",
+      "expected": "او گفت: من اینجا هستم.",
+      "options": {},
+      "kind": "positive",
+      "note": "Add space after colon before speech",
+      "reviewed": false
+    },
+    {
+      "id": "punctuation-011",
+      "input": "عدد اعشاری 3.14 است.",
+      "expected": "عدد اعشاری 3.14 است.",
+      "options": {},
+      "kind": "negative",
+      "note": "Decimal dot must remain untouched",
+      "reviewed": false
+    },
+    {
+      "id": "punctuation-012",
+      "input": "He said, \"Hello; are you ready?\"",
+      "expected": "He said, \"Hello; are you ready?\"",
+      "options": {},
+      "kind": "negative",
+      "note": "English punctuation inside Latin sentence preserved",
+      "reviewed": false
+    },
+    {
+      "id": "punctuation-013",
+      "input": "url = https://example.com/search?q=test;sort=desc",
+      "expected": "url = https://example.com/search?q=test;sort=desc",
+      "options": {},
+      "kind": "negative",
+      "note": "Punctuation marks inside URL parameters must not change",
+      "reviewed": false
+    },
+    {
+      "id": "punctuation-014",
+      "input": "for (let i = 0; i < 10; i++)",
+      "expected": "for (let i = 0; i < 10; i++)",
+      "options": {},
+      "kind": "negative",
+      "note": "Code with semicolons must not change",
+      "reviewed": false
+    },
+    {
+      "id": "punctuation-015",
+      "input": "نسبت ریاضی ۱:۲ برقرار است.",
+      "expected": "نسبت ریاضی ۱:۲ برقرار است.",
+      "options": {},
+      "kind": "negative",
+      "note": "Mathematical ratio colon must not receive space",
+      "reviewed": false
+    },
+    {
+      "id": "punctuation-016",
+      "input": "جلسه در ساعت 14:30 برگزار می\u200cشود.",
+      "expected": "جلسه در ساعت 14:30 برگزار می\u200cشود.",
+      "options": {},
+      "kind": "negative",
+      "note": "Time format with colon must not receive space",
+      "reviewed": false
+    },
+    {
+      "id": "punctuation-017",
+      "input": "روزهای شنبه، یکشنبه و دوشنبه تعطیل نیستند.",
+      "expected": "روزهای شنبه، یکشنبه و دوشنبه تعطیل نیستند.",
+      "options": {},
+      "kind": "negative",
+      "note": "Already correct Persian commas and spacing",
+      "reviewed": false
+    },
+    {
+      "id": "punctuation-018",
+      "input": "چرا رفتی؟ مگر قرار نبود بمانی؟",
+      "expected": "چرا رفتی؟ مگر قرار نبود بمانی؟",
+      "options": {},
+      "kind": "negative",
+      "note": "Already correct Persian question mark and spacing",
+      "reviewed": false
+    }
+  ]
+}

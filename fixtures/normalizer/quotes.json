@@ -1,0 +1,150 @@
+{
+  "rule": "quotes",
+  "description_en": "Convert ASCII double quotes and English smart quotes to Persian guillemets (« ») in Persian context.",
+  "cases": [
+    {
+      "id": "quotes-001",
+      "input": "او گفت \"سلام\"",
+      "expected": "او گفت «سلام»",
+      "options": {},
+      "kind": "positive",
+      "note": "ASCII quotes to Persian guillemets",
+      "reviewed": false
+    },
+    {
+      "id": "quotes-002",
+      "input": "کتاب \"گلستان سعدی\" بسیار نفیس است.",
+      "expected": "کتاب «گلستان سعدی» بسیار نفیس است.",
+      "options": {},
+      "kind": "positive",
+      "note": "Book title quoted with ASCII quotes",
+      "reviewed": false
+    },
+    {
+      "id": "quotes-003",
+      "input": "واژه “پژوهش” در متن آمده است.",
+      "expected": "واژه «پژوهش» در متن آمده است.",
+      "options": {},
+      "kind": "positive",
+      "note": "English curly double quotes to guillemets",
+      "reviewed": false
+    },
+    {
+      "id": "quotes-004",
+      "input": "نام مقاله “فناوری نوین” است.",
+      "expected": "نام مقاله «فناوری نوین» است.",
+      "options": {},
+      "kind": "positive",
+      "note": "Article title with curly quotes",
+      "reviewed": false
+    },
+    {
+      "id": "quotes-005",
+      "input": "عبارت \"دانش توانایی است\" از کیست؟",
+      "expected": "عبارت «دانش توانایی است» از کیست؟",
+      "options": {},
+      "kind": "positive",
+      "note": "Quoted sentence inside question",
+      "reviewed": false
+    },
+    {
+      "id": "quotes-006",
+      "input": "او فریاد زد: \"صبر کنید!\"",
+      "expected": "او فریاد زد: «صبر کنید!»",
+      "options": {},
+      "kind": "positive",
+      "note": "Speech in quotation marks",
+      "reviewed": false
+    },
+    {
+      "id": "quotes-007",
+      "input": "مفهوم \"هوش مصنوعی\" بسیار گسترده است.",
+      "expected": "مفهوم «هوش مصنوعی» بسیار گسترده است.",
+      "options": {},
+      "kind": "positive",
+      "note": "Technical term in quotation marks",
+      "reviewed": false
+    },
+    {
+      "id": "quotes-008",
+      "input": "شعر \"صد دانه یاقوت\" معروف است.",
+      "expected": "شعر «صد دانه یاقوت» معروف است.",
+      "options": {},
+      "kind": "positive",
+      "note": "Poem title in quotation marks",
+      "reviewed": false
+    },
+    {
+      "id": "quotes-009",
+      "input": "گفت: \"فردا بازمی\u200cگردم.\"",
+      "expected": "گفت: «فردا بازمی\u200cگردم.»",
+      "options": {},
+      "kind": "positive",
+      "note": "Direct speech in quotation marks",
+      "reviewed": false
+    },
+    {
+      "id": "quotes-010",
+      "input": "He said \"Hello world\" to everyone.",
+      "expected": "He said \"Hello world\" to everyone.",
+      "options": {},
+      "kind": "negative",
+      "note": "Quotes inside English text preserved",
+      "reviewed": false
+    },
+    {
+      "id": "quotes-011",
+      "input": "const message = \"Hello\";",
+      "expected": "const message = \"Hello\";",
+      "options": {},
+      "kind": "negative",
+      "note": "Quotes in code line preserved",
+      "reviewed": false
+    },
+    {
+      "id": "quotes-012",
+      "input": "{\"title\": \"data\", \"count\": 1}",
+      "expected": "{\"title\": \"data\", \"count\": 1}",
+      "options": {},
+      "kind": "negative",
+      "note": "JSON-like string quotes preserved",
+      "reviewed": false
+    },
+    {
+      "id": "quotes-013",
+      "input": "کد `console.log(\"test\")` را بنویسید.",
+      "expected": "کد `console.log(\"test\")` را بنویسید.",
+      "options": {},
+      "kind": "negative",
+      "note": "Quotes inside inline code preserved",
+      "reviewed": false
+    },
+    {
+      "id": "quotes-014",
+      "input": "او گفت «سلام» و درود فرستاد.",
+      "expected": "او گفت «سلام» و درود فرستاد.",
+      "options": {},
+      "kind": "negative",
+      "note": "Already correct Persian guillemets preserved",
+      "reviewed": false
+    },
+    {
+      "id": "quotes-015",
+      "input": "کتاب «بوستان» اثر سعدی شیرازی است.",
+      "expected": "کتاب «بوستان» اثر سعدی شیرازی است.",
+      "options": {},
+      "kind": "negative",
+      "note": "Already correct book title in guillemets",
+      "reviewed": false
+    },
+    {
+      "id": "quotes-016",
+      "input": "«دانایی توانایی است» سخنی پرمایه است.",
+      "expected": "«دانایی توانایی است» سخنی پرمایه است.",
+      "options": {},
+      "kind": "negative",
+      "note": "Already correct Persian quote at start of sentence",
+      "reviewed": false
+    }
+  ]
+}

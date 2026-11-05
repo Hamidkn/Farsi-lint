@@ -1,0 +1,150 @@
+{
+  "rule": "ellipsis",
+  "description_en": "Convert three or more ASCII dots (...) to the standard typographical ellipsis character (…), protecting code and URL ranges.",
+  "cases": [
+    {
+      "id": "ellipsis-001",
+      "input": "داستان ادامه دارد...",
+      "expected": "داستان ادامه دارد…",
+      "options": {},
+      "kind": "positive",
+      "note": "Three dots to ellipsis at sentence end",
+      "reviewed": false
+    },
+    {
+      "id": "ellipsis-002",
+      "input": "صبر کن.... گوش بده.",
+      "expected": "صبر کن… گوش بده.",
+      "options": {},
+      "kind": "positive",
+      "note": "Four dots collapsed to single ellipsis",
+      "reviewed": false
+    },
+    {
+      "id": "ellipsis-003",
+      "input": "شاید فردا... شاید هرگز...",
+      "expected": "شاید فردا… شاید هرگز…",
+      "options": {},
+      "kind": "positive",
+      "note": "Multiple ellipsis occurrences in one line",
+      "reviewed": false
+    },
+    {
+      "id": "ellipsis-004",
+      "input": "و غیره...",
+      "expected": "و غیره…",
+      "options": {},
+      "kind": "positive",
+      "note": "Common Persian abbreviation ending",
+      "reviewed": false
+    },
+    {
+      "id": "ellipsis-005",
+      "input": "سکوت برقرار شد...",
+      "expected": "سکوت برقرار شد…",
+      "options": {},
+      "kind": "positive",
+      "note": "Three dots at sentence end",
+      "reviewed": false
+    },
+    {
+      "id": "ellipsis-006",
+      "input": "یک، دو، سه...",
+      "expected": "یک، دو، سه…",
+      "options": {},
+      "kind": "positive",
+      "note": "Ellipsis following counting sequence",
+      "reviewed": false
+    },
+    {
+      "id": "ellipsis-007",
+      "input": "منتظر ماندیم... اما نیامد.",
+      "expected": "منتظر ماندیم… اما نیامد.",
+      "options": {},
+      "kind": "positive",
+      "note": "Ellipsis in mid-sentence pause",
+      "reviewed": false
+    },
+    {
+      "id": "ellipsis-008",
+      "input": "راه طولانی است...",
+      "expected": "راه طولانی است…",
+      "options": {},
+      "kind": "positive",
+      "note": "Trailing dots to ellipsis",
+      "reviewed": false
+    },
+    {
+      "id": "ellipsis-009",
+      "input": "امیدوار بودیم... بسیار امیدوار.",
+      "expected": "امیدوار بودیم… بسیار امیدوار.",
+      "options": {},
+      "kind": "positive",
+      "note": "Medial three dots to ellipsis",
+      "reviewed": false
+    },
+    {
+      "id": "ellipsis-010",
+      "input": "import ... from 'module'",
+      "expected": "import ... from 'module'",
+      "options": {},
+      "kind": "negative",
+      "note": "Code syntax with dots preserved",
+      "reviewed": false
+    },
+    {
+      "id": "ellipsis-011",
+      "input": "دامنه نسخه 1.2...1.5 بررسی شد.",
+      "expected": "دامنه نسخه 1.2...1.5 بررسی شد.",
+      "options": {},
+      "kind": "negative",
+      "note": "Version range notation preserved",
+      "reviewed": false
+    },
+    {
+      "id": "ellipsis-012",
+      "input": "پیوند https://example.com/.../path موجود است.",
+      "expected": "پیوند https://example.com/.../path موجود است.",
+      "options": {},
+      "kind": "negative",
+      "note": "Dots in URL path preserved",
+      "reviewed": false
+    },
+    {
+      "id": "ellipsis-013",
+      "input": "دستور const arr = [...items]; در جاوااسکریپت",
+      "expected": "دستور const arr = [...items]; در جاوااسکریپت",
+      "options": {},
+      "kind": "negative",
+      "note": "JavaScript spread operator [...items] preserved",
+      "reviewed": false
+    },
+    {
+      "id": "ellipsis-014",
+      "input": "نام پرونده test...txt بود.",
+      "expected": "نام پرونده test...txt بود.",
+      "options": {},
+      "kind": "negative",
+      "note": "Filename with dots preserved",
+      "reviewed": false
+    },
+    {
+      "id": "ellipsis-015",
+      "input": "داستان ادامه دارد… و پایان یافت.",
+      "expected": "داستان ادامه دارد… و پایان یافت.",
+      "options": {},
+      "kind": "negative",
+      "note": "Already correct standard ellipsis character preserved",
+      "reviewed": false
+    },
+    {
+      "id": "ellipsis-016",
+      "input": "سکوت و آرامش… همه جا را فرا گرفت.",
+      "expected": "سکوت و آرامش… همه جا را فرا گرفت.",
+      "options": {},
+      "kind": "negative",
+      "note": "Already correct typographic ellipsis preserved",
+      "reviewed": false
+    }
+  ]
+}

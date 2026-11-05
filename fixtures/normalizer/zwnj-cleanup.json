@@ -1,0 +1,168 @@
+{
+  "rule": "zwnj-cleanup",
+  "description_en": "Remove redundant ZWNJ next to space, duplicate ZWNJs, and ZWNJ at word boundaries or after non-joining letters.",
+  "cases": [
+    {
+      "id": "zwnj-cleanup-001",
+      "input": "کتاب \u200c من",
+      "expected": "کتاب من",
+      "options": {},
+      "kind": "positive",
+      "note": "ZWNJ directly preceded by space",
+      "reviewed": false
+    },
+    {
+      "id": "zwnj-cleanup-002",
+      "input": "کتاب\u200c من",
+      "expected": "کتاب من",
+      "options": {},
+      "kind": "positive",
+      "note": "ZWNJ directly followed by space",
+      "reviewed": false
+    },
+    {
+      "id": "zwnj-cleanup-003",
+      "input": "می\u200c\u200cروم",
+      "expected": "می\u200cروم",
+      "options": {},
+      "kind": "positive",
+      "note": "Duplicate consecutive ZWNJs collapsed to one",
+      "reviewed": false
+    },
+    {
+      "id": "zwnj-cleanup-004",
+      "input": "\u200cسلام دنیا",
+      "expected": "سلام دنیا",
+      "options": {},
+      "kind": "positive",
+      "note": "ZWNJ at the start of sentence",
+      "reviewed": false
+    },
+    {
+      "id": "zwnj-cleanup-005",
+      "input": "پایان متن\u200c",
+      "expected": "پایان متن",
+      "options": {},
+      "kind": "positive",
+      "note": "ZWNJ at the end of sentence",
+      "reviewed": false
+    },
+    {
+      "id": "zwnj-cleanup-006",
+      "input": "روز\u200cبه",
+      "expected": "روزبه",
+      "options": {},
+      "kind": "positive",
+      "note": "Redundant ZWNJ after non-joining letter 'ز'",
+      "reviewed": false
+    },
+    {
+      "id": "zwnj-cleanup-007",
+      "input": "رود\u200cخانه",
+      "expected": "رودخانه",
+      "options": {},
+      "kind": "positive",
+      "note": "Redundant ZWNJ after non-joining letter 'د'",
+      "reviewed": false
+    },
+    {
+      "id": "zwnj-cleanup-008",
+      "input": "باز\u200cگشت",
+      "expected": "بازگشت",
+      "options": {},
+      "kind": "positive",
+      "note": "Redundant ZWNJ after non-joining letter 'ز' in simple compound",
+      "reviewed": false
+    },
+    {
+      "id": "zwnj-cleanup-009",
+      "input": "دروازه\u200c ها",
+      "expected": "دروازه ها",
+      "options": {},
+      "kind": "positive",
+      "note": "ZWNJ adjacent to space before plural suffix",
+      "reviewed": false
+    },
+    {
+      "id": "zwnj-cleanup-010",
+      "input": "می\u200cروم",
+      "expected": "می\u200cروم",
+      "options": {},
+      "kind": "negative",
+      "note": "Proper ZWNJ between prefix and verb must remain",
+      "reviewed": false
+    },
+    {
+      "id": "zwnj-cleanup-011",
+      "input": "نمی\u200cدانم",
+      "expected": "نمی\u200cدانم",
+      "options": {},
+      "kind": "negative",
+      "note": "Proper ZWNJ with prefix نمی",
+      "reviewed": false
+    },
+    {
+      "id": "zwnj-cleanup-012",
+      "input": "کتاب\u200cها",
+      "expected": "کتاب\u200cها",
+      "options": {},
+      "kind": "negative",
+      "note": "Proper ZWNJ with plural suffix ها",
+      "reviewed": false
+    },
+    {
+      "id": "zwnj-cleanup-013",
+      "input": "دانش\u200cآموز",
+      "expected": "دانش\u200cآموز",
+      "options": {},
+      "kind": "negative",
+      "note": "Proper compound noun with ZWNJ",
+      "reviewed": false
+    },
+    {
+      "id": "zwnj-cleanup-014",
+      "input": "خانه\u200cای",
+      "expected": "خانه\u200cای",
+      "options": {},
+      "kind": "negative",
+      "note": "Proper indefinite suffix with ZWNJ",
+      "reviewed": false
+    },
+    {
+      "id": "zwnj-cleanup-015",
+      "input": "دست\u200cنوشته",
+      "expected": "دست\u200cنوشته",
+      "options": {},
+      "kind": "negative",
+      "note": "Proper compound noun دست\u200cنوشته",
+      "reviewed": false
+    },
+    {
+      "id": "zwnj-cleanup-016",
+      "input": "گفت\u200cوگو",
+      "expected": "گفت\u200cوگو",
+      "options": {},
+      "kind": "negative",
+      "note": "Proper Persian standard compound گفت\u200cوگو",
+      "reviewed": false
+    },
+    {
+      "id": "zwnj-cleanup-017",
+      "input": "پیش\u200cبینی",
+      "expected": "پیش\u200cبینی",
+      "options": {},
+      "kind": "negative",
+      "note": "Proper compound word پیش\u200cبینی",
+      "reviewed": false
+    },
+    {
+      "id": "zwnj-cleanup-018",
+      "input": "بین\u200cالمللی",
+      "expected": "بین\u200cالمللی",
+      "options": {},
+      "kind": "negative",
+      "note": "Standard compound noun بین\u200cالمللی",
+      "reviewed": false
+    }
+  ]
+}

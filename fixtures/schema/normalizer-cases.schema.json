@@ -1,0 +1,64 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "NormalizerCases",
+  "description": "Schema for rule-based Persian normalizer test fixtures",
+  "type": "object",
+  "required": [
+    "rule",
+    "description_en",
+    "cases"
+  ],
+  "properties": {
+    "rule": {
+      "type": "string"
+    },
+    "description_en": {
+      "type": "string"
+    },
+    "cases": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": [
+          "id",
+          "input",
+          "expected",
+          "options",
+          "kind",
+          "note",
+          "reviewed"
+        ],
+        "properties": {
+          "id": {
+            "type": "string",
+            "pattern": "^[a-z-]+-\\d{3}$"
+          },
+          "input": {
+            "type": "string"
+          },
+          "expected": {
+            "type": "string"
+          },
+          "options": {
+            "type": "object"
+          },
+          "kind": {
+            "type": "string",
+            "enum": [
+              "positive",
+              "negative"
+            ]
+          },
+          "note": {
+            "type": "string"
+          },
+          "reviewed": {
+            "type": "boolean"
+          }
+        },
+        "additionalProperties": false
+      }
+    }
+  },
+  "additionalProperties": false
+}

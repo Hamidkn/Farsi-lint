@@ -1,0 +1,47 @@
+{
+  "sample": "06-mixed-register",
+  "source": "synthetic",
+  "issues": [
+    {
+      "quote": "ما توی این شرکت خیلی هوای همدیگه رو داریم",
+      "category": "register",
+      "severity": "error",
+      "suggestion": "در این شرکت همکاران همواره پشتیبان یکدیگر هستند",
+      "explanation_fa": "افت ناگهانی لحن از نوشتاری اداری به عامیانه محاوره\u200cای",
+      "must_detect": true
+    },
+    {
+      "quote": "بچه\u200cها حسابی سنگ تموم می\u200cذارن تا کار سروقت آماده بشه",
+      "category": "register",
+      "severity": "error",
+      "suggestion": "اعضای تیم نهایت تلاش خود را به کار می\u200cبندند تا پروژه در موعد مقرر تکمیل گردد",
+      "explanation_fa": "ورود تعابیر و افعال کاملاً گفتاری به درون متن رسمی",
+      "must_detect": true
+    },
+    {
+      "quote": "جلسات رو آنلاین برگزار می\u200cکنیم",
+      "category": "register",
+      "severity": "error",
+      "suggestion": "جلسات را به صورت برخط برگزار می\u200cکنیم",
+      "explanation_fa": "استفاده از نشانه محاوره\u200cای «رو» و واژه عامیانه آنلاین در متن اداری",
+      "must_detect": true
+    },
+    {
+      "quote": "در راستای تحقق اهداف استراتژیک سازمان و توسعه سازمانی که بسیار مهم است،",
+      "category": "redundancy",
+      "severity": "warning",
+      "suggestion": "در جهت تحقق اهداف راهبردی شرکت،",
+      "explanation_fa": "اطناب و حشو اداری خسته\u200cکننده در تضاد با جملات محاوره\u200cای همجوار",
+      "must_detect": false
+    },
+    {
+      "quote": "تأثیرات منفی را بر انگیزه شغلی افراد بگذارد",
+      "category": "grammar",
+      "severity": "warning",
+      "suggestion": "تأثیرات منفی بر انگیزه شغلی افراد بگذارد",
+      "explanation_fa": "آوردن نشانه مفعولی «را» بدون ضرورت برای اسم نکره موصوف",
+      "must_detect": false
+    }
+  ],
+  "reviewed": false
+}

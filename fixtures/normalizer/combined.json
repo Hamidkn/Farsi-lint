@@ -1,0 +1,104 @@
+{
+  "rule": "combined",
+  "description_en": "Paragraph-level test cases where 3 to 6 normalization rules apply concurrently.",
+  "cases": [
+    {
+      "id": "combined-001",
+      "input": "علي و مهدي در سال 1403 کتاب ها را به کلاس می برند ,اما \"گلستان\" را فراموش کردند...",
+      "expected": "علی و مهدی در سال ۱۴۰۳ کتاب\u200cها را به کلاس می\u200cبرند، اما «گلستان» را فراموش کردند…",
+      "options": {
+        "digits": "persian"
+      },
+      "kind": "positive",
+      "note": "Rules: arabic-letters, digits, zwnj, punctuation, quotes, ellipsis",
+      "reviewed": false
+    },
+    {
+      "id": "combined-002",
+      "input": "آیا شما می دانید که خانه ی پدری بزرگ تر از خانه های دیگر است?بله ,مي دانم.",
+      "expected": "آیا شما می\u200cدانید که خانهٔ پدری بزرگ\u200cتر از خانه\u200cهای دیگر است؟ بله، می\u200cدانم.",
+      "options": {
+        "hehYeStyle": "hamza"
+      },
+      "kind": "positive",
+      "note": "Rules: zwnj, heh-ye, punctuation, arabic-letters",
+      "reviewed": false
+    },
+    {
+      "id": "combined-003",
+      "input": "كودك در بانك ٥٠٠٠ تومان پرداخت کرد ;اما رسيد دريافت نكرد...",
+      "expected": "کودک در بانک ۵۰۰۰ تومان پرداخت کرد؛ اما رسید دریافت نکرد…",
+      "options": {
+        "digits": "persian"
+      },
+      "kind": "positive",
+      "note": "Rules: arabic-letters, digits, punctuation, ellipsis",
+      "reviewed": false
+    },
+    {
+      "id": "combined-004",
+      "input": "ســـلام!نسخه جدید v1.0.4 منتشر شد.برای دریافت فایل MP3 به آدرس https://example.com/dl بروید...",
+      "expected": "سلام! نسخه جدید v1.0.4 منتشر شد. برای دریافت فایل MP3 به آدرس https://example.com/dl بروید…",
+      "options": {},
+      "kind": "positive",
+      "note": "Rules: kashida, punctuation, protected-spans, ellipsis",
+      "reviewed": false
+    },
+    {
+      "id": "combined-005",
+      "input": "او گفت \"دانش توانایی است\" ;اما نادانان نمی دانند...",
+      "expected": "او گفت «دانش توانایی است»؛ اما نادانان نمی\u200cدانند…",
+      "options": {},
+      "kind": "positive",
+      "note": "Rules: quotes, punctuation, zwnj, ellipsis",
+      "reviewed": false
+    },
+    {
+      "id": "combined-006",
+      "input": "پروژه ( فاز 2 ) در تاریخ 1403/01/15 تمام می شود .آیا راضی هستید ?",
+      "expected": "پروژه (فاز ۲) در تاریخ ۱۴۰۳/۰۱/۱۵ تمام می\u200cشود. آیا راضی هستید؟",
+      "options": {
+        "digits": "persian"
+      },
+      "kind": "positive",
+      "note": "Rules: brackets-spacing, digits, zwnj, spaces, punctuation",
+      "reviewed": false
+    },
+    {
+      "id": "combined-007",
+      "input": "منت خدای را عز و جل که طاعتش موجب قربت است و به شکر اندرش مزید نعمت. هر نفسی که فرو می\u200cرود ممد حیات است.",
+      "expected": "منت خدای را عز و جل که طاعتش موجب قربت است و به شکر اندرش مزید نعمت. هر نفسی که فرو می\u200cرود ممد حیات است.",
+      "options": {},
+      "kind": "negative",
+      "note": "Clean classical prose (Saadi) with zero errors",
+      "reviewed": false
+    },
+    {
+      "id": "combined-008",
+      "input": "به نام خداوند جان و خرد، کزین برتر اندیشه برنگذرد. خداوند نام و خداوند جای، خداوند روزی\u200cده و رهنمای.",
+      "expected": "به نام خداوند جان و خرد، کزین برتر اندیشه برنگذرد. خداوند نام و خداوند جای، خداوند روزی\u200cده و رهنمای.",
+      "options": {},
+      "kind": "negative",
+      "note": "Clean epic verse (Ferdowsi) with zero errors",
+      "reviewed": false
+    },
+    {
+      "id": "combined-009",
+      "input": "کهکشان راه شیری شامل میلیاردها ستاره است که حول یک مرکز مشترک گردش می\u200cکنند و سامانه\u200cهای سیاره\u200cای گوناگونی دارند.",
+      "expected": "کهکشان راه شیری شامل میلیاردها ستاره است که حول یک مرکز مشترک گردش می\u200cکنند و سامانه\u200cهای سیاره\u200cای گوناگونی دارند.",
+      "options": {},
+      "kind": "negative",
+      "note": "Clean modern scientific prose with zero errors",
+      "reviewed": false
+    },
+    {
+      "id": "combined-010",
+      "input": "معماری سنتی ایران در شهرهایی چون اصفهان و یزد نمونه\u200cای بی\u200cهمتا از تلفیق اقلیم، بادگیرها و حیاط\u200cهای مرکزی سرسبز است.",
+      "expected": "معماری سنتی ایران در شهرهایی چون اصفهان و یزد نمونه\u200cای بی\u200cهمتا از تلفیق اقلیم، بادگیرها و حیاط\u200cهای مرکزی سرسبز است.",
+      "options": {},
+      "kind": "negative",
+      "note": "Clean architectural essay prose with zero errors",
+      "reviewed": false
+    }
+  ]
+}

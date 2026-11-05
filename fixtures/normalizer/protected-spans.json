@@ -1,0 +1,152 @@
+{
+  "rule": "protected-spans",
+  "description_en": "Ensure URLs, emails, inline code, code blocks, @mentions, #hashtags, and Latin words remain byte-identical while normalizing surrounding Persian.",
+  "cases": [
+    {
+      "id": "protected-spans-001",
+      "input": "کتاب ها در آدرس https://example.com/books/v1?id=50 قرار دارند.",
+      "expected": "کتاب\u200cها در آدرس https://example.com/books/v1?id=50 قرار دارند.",
+      "options": {},
+      "kind": "positive",
+      "note": "URL is preserved exactly while کتاب ها gets ZWNJ",
+      "reviewed": false
+    },
+    {
+      "id": "protected-spans-002",
+      "input": "نامه را به ایمیل user123@domain.com می فرستم.",
+      "expected": "نامه را به ایمیل user123@domain.com می\u200cفرستم.",
+      "options": {},
+      "kind": "positive",
+      "note": "Email is preserved exactly while می فرستم gets ZWNJ",
+      "reviewed": false
+    },
+    {
+      "id": "protected-spans-003",
+      "input": "کد `const count = 5;` را اجرا می کنم.",
+      "expected": "کد `const count = 5;` را اجرا می\u200cکنم.",
+      "options": {},
+      "kind": "positive",
+      "note": "Inline code preserved while Persian verb is normalized",
+      "reviewed": false
+    },
+    {
+      "id": "protected-spans-004",
+      "input": "در توییتر به @tech_persian پیام می دهم.",
+      "expected": "در توییتر به @tech_persian پیام می\u200cدهم.",
+      "options": {},
+      "kind": "positive",
+      "note": "Mention @tech_persian preserved exactly",
+      "reviewed": false
+    },
+    {
+      "id": "protected-spans-005",
+      "input": "مطلب با هشتگ #iran_2024 منتشر می شود.",
+      "expected": "مطلب با هشتگ #iran_2024 منتشر می\u200cشود.",
+      "options": {},
+      "kind": "positive",
+      "note": "Hashtag preserved exactly",
+      "reviewed": false
+    },
+    {
+      "id": "protected-spans-006",
+      "input": "فایل MP3 در سال 1403 ساخته شد.",
+      "expected": "فایل MP3 در سال ۱۴۰۳ ساخته شد.",
+      "options": {
+        "digits": "persian"
+      },
+      "kind": "positive",
+      "note": "Latin token MP3 preserved while standalone year 1403 is converted",
+      "reviewed": false
+    },
+    {
+      "id": "protected-spans-007",
+      "input": "نسخه v2.1.0 با فرمت UTF8 آماده می باشد.",
+      "expected": "نسخه v2.1.0 با فرمت UTF8 آماده می\u200cباشد.",
+      "options": {},
+      "kind": "positive",
+      "note": "Version and UTF8 token preserved while Persian verb gets ZWNJ",
+      "reviewed": false
+    },
+    {
+      "id": "protected-spans-008",
+      "input": "قطعه کد:\n```javascript\nconsole.log('test 123');\n```\nاجرا می شود.",
+      "expected": "قطعه کد:\n```javascript\nconsole.log('test 123');\n```\nاجرا می\u200cشود.",
+      "options": {},
+      "kind": "positive",
+      "note": "Fenced code block preserved while surrounding Persian gets ZWNJ",
+      "reviewed": false
+    },
+    {
+      "id": "protected-spans-009",
+      "input": "نشانی http://site.com/api?user=ali;page=2 را باز می کند.",
+      "expected": "نشانی http://site.com/api?user=ali;page=2 را باز می\u200cکند.",
+      "options": {},
+      "kind": "positive",
+      "note": "URL with query params preserved while Persian verb gets ZWNJ",
+      "reviewed": false
+    },
+    {
+      "id": "protected-spans-010",
+      "input": "https://github.com/user/repo/blob/main/README.md",
+      "expected": "https://github.com/user/repo/blob/main/README.md",
+      "options": {},
+      "kind": "negative",
+      "note": "Standalone URL must remain byte-identical",
+      "reviewed": false
+    },
+    {
+      "id": "protected-spans-011",
+      "input": "contact_support@company.org",
+      "expected": "contact_support@company.org",
+      "options": {},
+      "kind": "negative",
+      "note": "Standalone email address must remain byte-identical",
+      "reviewed": false
+    },
+    {
+      "id": "protected-spans-012",
+      "input": "`git commit -m \"feat: initial commit\"`",
+      "expected": "`git commit -m \"feat: initial commit\"`",
+      "options": {},
+      "kind": "negative",
+      "note": "Inline code block must remain byte-identical",
+      "reviewed": false
+    },
+    {
+      "id": "protected-spans-013",
+      "input": "```javascript\nconst x = 10;\nconst y = 20;\n```",
+      "expected": "```javascript\nconst x = 10;\nconst y = 20;\n```",
+      "options": {},
+      "kind": "negative",
+      "note": "Standalone fenced code block must remain byte-identical",
+      "reviewed": false
+    },
+    {
+      "id": "protected-spans-014",
+      "input": "@developer_team",
+      "expected": "@developer_team",
+      "options": {},
+      "kind": "negative",
+      "note": "Standalone mention must remain byte-identical",
+      "reviewed": false
+    },
+    {
+      "id": "protected-spans-015",
+      "input": "#persian_typography_1403",
+      "expected": "#persian_typography_1403",
+      "options": {},
+      "kind": "negative",
+      "note": "Standalone hashtag must remain byte-identical",
+      "reviewed": false
+    },
+    {
+      "id": "protected-spans-016",
+      "input": "iPhone 15 Pro Max 256GB",
+      "expected": "iPhone 15 Pro Max 256GB",
+      "options": {},
+      "kind": "negative",
+      "note": "Latin brand string with numbers must remain byte-identical",
+      "reviewed": false
+    }
+  ]
+}

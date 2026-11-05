@@ -1,0 +1,182 @@
+{
+  "rule": "heh-ye",
+  "description_en": "Normalize ezafe after silent heh (ه ی) to hamza (هٔ) or ZWNJ+ye (هی) according to configuration.",
+  "cases": [
+    {
+      "id": "heh-ye-001",
+      "input": "خانه ی من",
+      "expected": "خانهٔ من",
+      "options": {
+        "hehYeStyle": "hamza"
+      },
+      "kind": "positive",
+      "note": "Convert خانه ی to خانهٔ (hamza option)",
+      "reviewed": false
+    },
+    {
+      "id": "heh-ye-002",
+      "input": "خانه ی من",
+      "expected": "خانه\u200cی من",
+      "options": {
+        "hehYeStyle": "zwnj"
+      },
+      "kind": "positive",
+      "note": "Convert خانه ی to خانه\u200cی (zwnj option)",
+      "reviewed": false
+    },
+    {
+      "id": "heh-ye-003",
+      "input": "نامه ی اداری رسید.",
+      "expected": "نامهٔ اداری رسید.",
+      "options": {
+        "hehYeStyle": "hamza"
+      },
+      "kind": "positive",
+      "note": "Convert نامه ی to نامهٔ",
+      "reviewed": false
+    },
+    {
+      "id": "heh-ye-004",
+      "input": "نامه ی اداری رسید.",
+      "expected": "نامه\u200cی اداری رسید.",
+      "options": {
+        "hehYeStyle": "zwnj"
+      },
+      "kind": "positive",
+      "note": "Convert نامه ی to نامه\u200cی",
+      "reviewed": false
+    },
+    {
+      "id": "heh-ye-005",
+      "input": "جامه ی نو بر تن کرد.",
+      "expected": "جامهٔ نو بر تن کرد.",
+      "options": {
+        "hehYeStyle": "hamza"
+      },
+      "kind": "positive",
+      "note": "Convert جامه ی to جامهٔ",
+      "reviewed": false
+    },
+    {
+      "id": "heh-ye-006",
+      "input": "پرونده ی پرونده ساز",
+      "expected": "پروندهٔ پرونده ساز",
+      "options": {
+        "hehYeStyle": "hamza"
+      },
+      "kind": "positive",
+      "note": "Convert پرونده ی to پروندهٔ",
+      "reviewed": false
+    },
+    {
+      "id": "heh-ye-007",
+      "input": "چشمه ی آب زلال",
+      "expected": "چشمه\u200cی آب زلال",
+      "options": {
+        "hehYeStyle": "zwnj"
+      },
+      "kind": "positive",
+      "note": "Convert چشمه ی to چشمه\u200cی",
+      "reviewed": false
+    },
+    {
+      "id": "heh-ye-008",
+      "input": "هفته ی آینده دیدار داریم.",
+      "expected": "هفتهٔ آینده دیدار داریم.",
+      "options": {
+        "hehYeStyle": "hamza"
+      },
+      "kind": "positive",
+      "note": "Convert هفته ی to هفتهٔ",
+      "reviewed": false
+    },
+    {
+      "id": "heh-ye-009",
+      "input": "ستاره ی درخشان در آسمان",
+      "expected": "ستارهٔ درخشان در آسمان",
+      "options": {
+        "hehYeStyle": "hamza"
+      },
+      "kind": "positive",
+      "note": "Convert ستاره ی to ستارهٔ",
+      "reviewed": false
+    },
+    {
+      "id": "heh-ye-010",
+      "input": "او در خانه\u200cای بزرگ زندگی می\u200cکند.",
+      "expected": "او در خانه\u200cای بزرگ زندگی می\u200cکند.",
+      "options": {
+        "hehYeStyle": "hamza"
+      },
+      "kind": "negative",
+      "note": "Indefinite ya after heh (خانه\u200cای) is not ezafe and must not change",
+      "reviewed": false
+    },
+    {
+      "id": "heh-ye-011",
+      "input": "نامه\u200cای به دستم رسید.",
+      "expected": "نامه\u200cای به دستم رسید.",
+      "options": {
+        "hehYeStyle": "hamza"
+      },
+      "kind": "negative",
+      "note": "Indefinite noun نامه\u200cای must not change",
+      "reviewed": false
+    },
+    {
+      "id": "heh-ye-012",
+      "input": "جامه\u200cای زیبا دوخته شد.",
+      "expected": "جامه\u200cای زیبا دوخته شد.",
+      "options": {
+        "hehYeStyle": "hamza"
+      },
+      "kind": "negative",
+      "note": "Indefinite noun جامه\u200cای must not change",
+      "reviewed": false
+    },
+    {
+      "id": "heh-ye-013",
+      "input": "چشمه\u200cای جوشان در کوهستان",
+      "expected": "چشمه\u200cای جوشان در کوهستان",
+      "options": {
+        "hehYeStyle": "hamza"
+      },
+      "kind": "negative",
+      "note": "Indefinite noun چشمه\u200cای must not change",
+      "reviewed": false
+    },
+    {
+      "id": "heh-ye-014",
+      "input": "دیده\u200cای پر از اشک",
+      "expected": "دیده\u200cای پر از اشک",
+      "options": {
+        "hehYeStyle": "hamza"
+      },
+      "kind": "negative",
+      "note": "Participle دیده\u200cای must not change",
+      "reviewed": false
+    },
+    {
+      "id": "heh-ye-015",
+      "input": "خسته\u200cای از راه رسید.",
+      "expected": "خسته\u200cای از راه رسید.",
+      "options": {
+        "hehYeStyle": "hamza"
+      },
+      "kind": "negative",
+      "note": "Adjective with indefinite ya خسته\u200cای must not change",
+      "reviewed": false
+    },
+    {
+      "id": "heh-ye-016",
+      "input": "خانهٔ من بسیار دلنشین است.",
+      "expected": "خانهٔ من بسیار دلنشین است.",
+      "options": {
+        "hehYeStyle": "hamza"
+      },
+      "kind": "negative",
+      "note": "Already correct ezafe with hamza must not change",
+      "reviewed": false
+    }
+  ]
+}

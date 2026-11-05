@@ -1,0 +1,168 @@
+{
+  "rule": "spaces",
+  "description_en": "Normalize multiple spaces and trailing spaces while preserving intentional line breaks.",
+  "cases": [
+    {
+      "id": "spaces-001",
+      "input": "سلام    جهان",
+      "expected": "سلام جهان",
+      "options": {},
+      "kind": "positive",
+      "note": "Collapse multiple horizontal spaces",
+      "reviewed": false
+    },
+    {
+      "id": "spaces-002",
+      "input": "این یک   متن آزمایشی است.",
+      "expected": "این یک متن آزمایشی است.",
+      "options": {},
+      "kind": "positive",
+      "note": "Collapse three spaces in sentence",
+      "reviewed": false
+    },
+    {
+      "id": "spaces-003",
+      "input": "کتاب و دفتر  ",
+      "expected": "کتاب و دفتر",
+      "options": {},
+      "kind": "positive",
+      "note": "Strip trailing whitespace",
+      "reviewed": false
+    },
+    {
+      "id": "spaces-004",
+      "input": "کتاب ، دفتر",
+      "expected": "کتاب، دفتر",
+      "options": {},
+      "kind": "positive",
+      "note": "Remove space before Persian comma",
+      "reviewed": false
+    },
+    {
+      "id": "spaces-005",
+      "input": "امروز شنبه است ؛ فردا یکشنبه.",
+      "expected": "امروز شنبه است؛ فردا یکشنبه.",
+      "options": {},
+      "kind": "positive",
+      "note": "Remove space before semicolon",
+      "reviewed": false
+    },
+    {
+      "id": "spaces-006",
+      "input": "آیا آماده هستید ؟",
+      "expected": "آیا آماده هستید؟",
+      "options": {},
+      "kind": "positive",
+      "note": "Remove space before question mark",
+      "reviewed": false
+    },
+    {
+      "id": "spaces-007",
+      "input": "به پیشواز بهار بروید !",
+      "expected": "به پیشواز بهار بروید!",
+      "options": {},
+      "kind": "positive",
+      "note": "Remove space before exclamation mark",
+      "reviewed": false
+    },
+    {
+      "id": "spaces-008",
+      "input": "موضوع جلسه : بررسی نهایی بودجه",
+      "expected": "موضوع جلسه: بررسی نهایی بودجه",
+      "options": {},
+      "kind": "positive",
+      "note": "Remove space before colon",
+      "reviewed": false
+    },
+    {
+      "id": "spaces-009",
+      "input": "پایان جمله رسید .",
+      "expected": "پایان جمله رسید.",
+      "options": {},
+      "kind": "positive",
+      "note": "Remove space before period",
+      "reviewed": false
+    },
+    {
+      "id": "spaces-010",
+      "input": "نکته اول . نکته دوم .",
+      "expected": "نکته اول. نکته دوم.",
+      "options": {},
+      "kind": "positive",
+      "note": "Remove multiple spaces before periods",
+      "reviewed": false
+    },
+    {
+      "id": "spaces-011",
+      "input": "پاراگراف اول.\n\nپاراگراف دوم.",
+      "expected": "پاراگراف اول.\n\nپاراگراف دوم.",
+      "options": {},
+      "kind": "negative",
+      "note": "Preserve intentional paragraph breaks",
+      "reviewed": false
+    },
+    {
+      "id": "spaces-012",
+      "input": "سطر اول\nسطر دوم",
+      "expected": "سطر اول\nسطر دوم",
+      "options": {},
+      "kind": "negative",
+      "note": "Preserve intentional single line break",
+      "reviewed": false
+    },
+    {
+      "id": "spaces-013",
+      "input": "یک دو سه چهار پنج",
+      "expected": "یک دو سه چهار پنج",
+      "options": {},
+      "kind": "negative",
+      "note": "Normal single spaces preserved",
+      "reviewed": false
+    },
+    {
+      "id": "spaces-014",
+      "input": "کتاب، دفتر، قلم و کاغذ",
+      "expected": "کتاب، دفتر، قلم و کاغذ",
+      "options": {},
+      "kind": "negative",
+      "note": "Properly spaced punctuation preserved",
+      "reviewed": false
+    },
+    {
+      "id": "spaces-015",
+      "input": "آیا آمدی؟ بله، آمدم.",
+      "expected": "آیا آمدی؟ بله، آمدم.",
+      "options": {},
+      "kind": "negative",
+      "note": "Standard question spacing preserved",
+      "reviewed": false
+    },
+    {
+      "id": "spaces-016",
+      "input": "نقطه. بعد از نقطه فاصله استاندارد است.",
+      "expected": "نقطه. بعد از نقطه فاصله استاندارد است.",
+      "options": {},
+      "kind": "negative",
+      "note": "Standard sentence boundary preserved",
+      "reviewed": false
+    },
+    {
+      "id": "spaces-017",
+      "input": "«گیومه» بدون فاصله اضافه است.",
+      "expected": "«گیومه» بدون فاصله اضافه است.",
+      "options": {},
+      "kind": "negative",
+      "note": "Correctly spaced quotes preserved",
+      "reviewed": false
+    },
+    {
+      "id": "spaces-018",
+      "input": "(پرانتز) بدون فاصله اضافه است.",
+      "expected": "(پرانتز) بدون فاصله اضافه است.",
+      "options": {},
+      "kind": "negative",
+      "note": "Correctly spaced parentheses preserved",
+      "reviewed": false
+    }
+  ]
+}

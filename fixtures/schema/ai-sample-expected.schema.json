@@ -1,0 +1,75 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "AISampleExpected",
+  "description": "Schema for expected issues in AI-generated Persian evaluation samples",
+  "type": "object",
+  "required": [
+    "sample",
+    "source",
+    "issues",
+    "reviewed"
+  ],
+  "properties": {
+    "sample": {
+      "type": "string"
+    },
+    "source": {
+      "type": "string"
+    },
+    "reviewed": {
+      "type": "boolean"
+    },
+    "issues": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": [
+          "quote",
+          "category",
+          "severity",
+          "suggestion",
+          "explanation_fa",
+          "must_detect"
+        ],
+        "properties": {
+          "quote": {
+            "type": "string",
+            "minLength": 1
+          },
+          "category": {
+            "type": "string",
+            "enum": [
+              "translationese",
+              "unnatural",
+              "grammar",
+              "register",
+              "collocation",
+              "redundancy",
+              "terminology",
+              "clarity"
+            ]
+          },
+          "severity": {
+            "type": "string",
+            "enum": [
+              "error",
+              "warning",
+              "suggestion"
+            ]
+          },
+          "suggestion": {
+            "type": "string"
+          },
+          "explanation_fa": {
+            "type": "string"
+          },
+          "must_detect": {
+            "type": "boolean"
+          }
+        },
+        "additionalProperties": false
+      }
+    }
+  },
+  "additionalProperties": false
+}
