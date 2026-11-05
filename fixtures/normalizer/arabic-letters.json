@@ -1,0 +1,186 @@
+{
+  "rule": "arabic-letters",
+  "description_en": "Normalize Arabic letter variants only in Persian words; preserve lexical hamza.",
+  "cases": [
+    {
+      "input": "كتاب",
+      "expected": "کتاب",
+      "options": {},
+      "kind": "positive",
+      "note": "Arabic kaf in an ordinary Persian word",
+      "reviewed": false,
+      "id": "arabic-letters-001"
+    },
+    {
+      "input": "كودک",
+      "expected": "کودک",
+      "options": {},
+      "kind": "positive",
+      "note": "Arabic kaf at the start",
+      "reviewed": false,
+      "id": "arabic-letters-002"
+    },
+    {
+      "input": "بزرگي",
+      "expected": "بزرگی",
+      "options": {},
+      "kind": "positive",
+      "note": "Arabic yeh at the end",
+      "reviewed": false,
+      "id": "arabic-letters-003"
+    },
+    {
+      "input": "كيک",
+      "expected": "کیک",
+      "options": {},
+      "kind": "positive",
+      "note": "Arabic kaf and yeh in the same word",
+      "reviewed": false,
+      "id": "arabic-letters-004"
+    },
+    {
+      "input": "خيابان",
+      "expected": "خیابان",
+      "options": {},
+      "kind": "positive",
+      "note": "Arabic yeh inside a word",
+      "reviewed": false,
+      "id": "arabic-letters-005"
+    },
+    {
+      "input": "مدرسة",
+      "expected": "مدرسه",
+      "options": {},
+      "kind": "positive",
+      "note": "Persian word ending in heh, not Arabic ta marbuta",
+      "reviewed": false,
+      "id": "arabic-letters-006"
+    },
+    {
+      "input": "نقطة",
+      "expected": "نقطه",
+      "options": {},
+      "kind": "positive",
+      "note": "Ta marbuta in the Persian word for point",
+      "reviewed": false,
+      "id": "arabic-letters-007"
+    },
+    {
+      "input": "شبکة",
+      "expected": "شبکه",
+      "options": {},
+      "kind": "positive",
+      "note": "Ta marbuta in the Persian word for network",
+      "reviewed": false,
+      "id": "arabic-letters-008"
+    },
+    {
+      "input": "إمکان",
+      "expected": "امکان",
+      "options": {},
+      "kind": "positive",
+      "note": "Initial hamza is not retained in this Persian word",
+      "reviewed": false,
+      "id": "arabic-letters-009"
+    },
+    {
+      "input": "إجرا",
+      "expected": "اجرا",
+      "options": {},
+      "kind": "positive",
+      "note": "Initial hamza in a Persian context",
+      "reviewed": false,
+      "id": "arabic-letters-010"
+    },
+    {
+      "input": "أخبار",
+      "expected": "اخبار",
+      "options": {},
+      "kind": "positive",
+      "note": "Initial hamza in the Persian word for news",
+      "reviewed": false,
+      "id": "arabic-letters-011"
+    },
+    {
+      "input": "أثر",
+      "expected": "اثر",
+      "options": {},
+      "kind": "positive",
+      "note": "Initial hamza in the Persian word for effect",
+      "reviewed": false,
+      "id": "arabic-letters-012"
+    },
+    {
+      "input": "کتاب کودک",
+      "expected": "کتاب کودک",
+      "options": {},
+      "kind": "negative",
+      "note": "Persian kaf already correct",
+      "reviewed": false,
+      "id": "arabic-letters-013"
+    },
+    {
+      "input": "خیابان بزرگی",
+      "expected": "خیابان بزرگی",
+      "options": {},
+      "kind": "negative",
+      "note": "Persian yeh already correct",
+      "reviewed": false,
+      "id": "arabic-letters-014"
+    },
+    {
+      "input": "مسئله",
+      "expected": "مسئله",
+      "options": {},
+      "kind": "negative",
+      "note": "Do not strip a lexical hamza",
+      "reviewed": false,
+      "id": "arabic-letters-015"
+    },
+    {
+      "input": "مسأله",
+      "expected": "مسأله",
+      "options": {},
+      "kind": "negative",
+      "note": "Preserve the accepted alternate spelling requested by the fixture contract",
+      "reviewed": false,
+      "id": "arabic-letters-016"
+    },
+    {
+      "input": "رئیس",
+      "expected": "رئیس",
+      "options": {},
+      "kind": "negative",
+      "note": "Hamza on yeh is part of the spelling",
+      "reviewed": false,
+      "id": "arabic-letters-017"
+    },
+    {
+      "input": "تأثیر",
+      "expected": "تأثیر",
+      "options": {},
+      "kind": "negative",
+      "note": "Medial hamza on alef must remain",
+      "reviewed": false,
+      "id": "arabic-letters-018"
+    },
+    {
+      "input": "مؤسسه",
+      "expected": "مؤسسه",
+      "options": {},
+      "kind": "negative",
+      "note": "Hamza on waw must remain; no blanket replacement of waw-hamza",
+      "reviewed": false,
+      "id": "arabic-letters-019"
+    },
+    {
+      "input": "رؤیا",
+      "expected": "رؤیا",
+      "options": {},
+      "kind": "negative",
+      "note": "Hamza on waw in an established Persian spelling",
+      "reviewed": false,
+      "id": "arabic-letters-020"
+    }
+  ]
+}

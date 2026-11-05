@@ -1,0 +1,226 @@
+{
+  "rule": "digits",
+  "description_en": "Convert digits in Persian context only when requested; preserve technical and English spans.",
+  "cases": [
+    {
+      "input": "تعداد 456 نفر",
+      "expected": "تعداد ۴۵۶ نفر",
+      "options": {
+        "digits": "persian"
+      },
+      "kind": "positive",
+      "note": "ASCII digits in Persian prose",
+      "reviewed": false,
+      "id": "digits-001"
+    },
+    {
+      "input": "تعداد ٤٥٦ نفر",
+      "expected": "تعداد ۴۵۶ نفر",
+      "options": {
+        "digits": "persian"
+      },
+      "kind": "positive",
+      "note": "Arabic-Indic digits in Persian prose",
+      "reviewed": false,
+      "id": "digits-002"
+    },
+    {
+      "input": "رقم 0",
+      "expected": "رقم ۰",
+      "options": {
+        "digits": "persian"
+      },
+      "kind": "positive",
+      "note": "ASCII zero",
+      "reviewed": false,
+      "id": "digits-003"
+    },
+    {
+      "input": "رقم ٠",
+      "expected": "رقم ۰",
+      "options": {
+        "digits": "persian"
+      },
+      "kind": "positive",
+      "note": "Arabic-Indic zero",
+      "reviewed": false,
+      "id": "digits-004"
+    },
+    {
+      "input": "اعداد 1234567890",
+      "expected": "اعداد ۱۲۳۴۵۶۷۸۹۰",
+      "options": {
+        "digits": "persian"
+      },
+      "kind": "positive",
+      "note": "All ten ASCII digit mappings",
+      "reviewed": false,
+      "id": "digits-005"
+    },
+    {
+      "input": "اعداد ١٢٣٤٥٦٧٨٩٠",
+      "expected": "اعداد ۱۲۳۴۵۶۷۸۹۰",
+      "options": {
+        "digits": "persian"
+      },
+      "kind": "positive",
+      "note": "All ten Arabic-Indic digit mappings",
+      "reviewed": false,
+      "id": "digits-006"
+    },
+    {
+      "input": "صفحه 12 از ٣٠",
+      "expected": "صفحه ۱۲ از ۳۰",
+      "options": {
+        "digits": "persian"
+      },
+      "kind": "positive",
+      "note": "Mixed source digit alphabets",
+      "reviewed": false,
+      "id": "digits-007"
+    },
+    {
+      "input": "سال 1405 است.",
+      "expected": "سال ۱۴۰۵ است.",
+      "options": {
+        "digits": "persian"
+      },
+      "kind": "positive",
+      "note": "Year within Persian context",
+      "reviewed": false,
+      "id": "digits-008"
+    },
+    {
+      "input": "بخش 2 و بند ٧",
+      "expected": "بخش ۲ و بند ۷",
+      "options": {
+        "digits": "persian"
+      },
+      "kind": "positive",
+      "note": "Separated numeric tokens",
+      "reviewed": false,
+      "id": "digits-009"
+    },
+    {
+      "input": "تعداد ۴۵۶ نفر",
+      "expected": "تعداد ۴۵۶ نفر",
+      "options": {
+        "digits": "persian"
+      },
+      "kind": "negative",
+      "note": "Already Persian digits",
+      "reviewed": false,
+      "id": "digits-010"
+    },
+    {
+      "input": "تعداد 456 نفر",
+      "expected": "تعداد 456 نفر",
+      "options": {
+        "digits": "keep"
+      },
+      "kind": "negative",
+      "note": "Explicit keep option suppresses conversion",
+      "reviewed": false,
+      "id": "digits-011"
+    },
+    {
+      "input": "تعداد ٤٥٦ نفر",
+      "expected": "تعداد ٤٥٦ نفر",
+      "options": {
+        "digits": "keep"
+      },
+      "kind": "negative",
+      "note": "Keep applies to Arabic-Indic digits too",
+      "reviewed": false,
+      "id": "digits-012"
+    },
+    {
+      "input": "UTF8 MP3 X7",
+      "expected": "UTF8 MP3 X7",
+      "options": {
+        "digits": "persian"
+      },
+      "kind": "negative",
+      "note": "Digits within Latin alphanumeric words",
+      "reviewed": false,
+      "id": "digits-013"
+    },
+    {
+      "input": "https://example.invalid/v2?id=456",
+      "expected": "https://example.invalid/v2?id=456",
+      "options": {
+        "digits": "persian"
+      },
+      "kind": "negative",
+      "note": "URL digits are immutable",
+      "reviewed": false,
+      "id": "digits-014"
+    },
+    {
+      "input": "نسخه v2.1 آماده است.",
+      "expected": "نسخه v2.1 آماده است.",
+      "options": {
+        "digits": "persian"
+      },
+      "kind": "negative",
+      "note": "Prefixed version number",
+      "reviewed": false,
+      "id": "digits-015"
+    },
+    {
+      "input": "نسخه 3.5.0 آماده است.",
+      "expected": "نسخه 3.5.0 آماده است.",
+      "options": {
+        "digits": "persian"
+      },
+      "kind": "negative",
+      "note": "Bare three-part version number",
+      "reviewed": false,
+      "id": "digits-016"
+    },
+    {
+      "input": "`const n = 456;`",
+      "expected": "`const n = 456;`",
+      "options": {
+        "digits": "persian"
+      },
+      "kind": "negative",
+      "note": "Inline code",
+      "reviewed": false,
+      "id": "digits-017"
+    },
+    {
+      "input": "Released on 2026-11-05.",
+      "expected": "Released on 2026-11-05.",
+      "options": {
+        "digits": "persian"
+      },
+      "kind": "negative",
+      "note": "ISO date in an English sentence",
+      "reviewed": false,
+      "id": "digits-018"
+    },
+    {
+      "input": "Call +1-202-555-0123 for help.",
+      "expected": "Call +1-202-555-0123 for help.",
+      "options": {
+        "digits": "persian"
+      },
+      "kind": "negative",
+      "note": "Reserved fictional phone number in English context",
+      "reviewed": false,
+      "id": "digits-019"
+    },
+    {
+      "input": "user456@example.invalid",
+      "expected": "user456@example.invalid",
+      "options": {
+        "digits": "persian"
+      },
+      "kind": "negative",
+      "note": "Email local-part digits",
+      "reviewed": false,
+      "id": "digits-020"
+    }
+  ]
+}

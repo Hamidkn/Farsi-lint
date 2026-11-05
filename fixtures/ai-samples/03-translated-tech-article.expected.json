@@ -1,0 +1,63 @@
+{
+  "sample": "03-translated-tech-article",
+  "source": "synthetic",
+  "issues": [
+    {
+      "quote": "یک نگاه نزدیک بگیریم به مسیر داده",
+      "category": "translationese",
+      "severity": "warning",
+      "suggestion": "مسیر داده را دقیق بررسی کنیم",
+      "explanation_fa": "این عبارت ساخت و ترتیب واژه\u200cهای یک تعبیر انگلیسی را تقلید می\u200cکند.",
+      "must_detect": true
+    },
+    {
+      "quote": "دیدپذیری می\u200cدهد به رفتار سامانه",
+      "category": "unnatural",
+      "severity": "warning",
+      "suggestion": "امکان مشاهدهٔ رفتار سامانه را فراهم می\u200cکند",
+      "explanation_fa": "همایندی و ترتیب اجزای این عبارت در فارسی طبیعی نیست.",
+      "must_detect": true
+    },
+    {
+      "quote": "ظرفیت میانگیر را تنظیم می\u200cکنیم",
+      "category": "terminology",
+      "severity": "warning",
+      "suggestion": "ظرفیت بافر را تنظیم می\u200cکنیم",
+      "explanation_fa": "متن برای یک مفهوم واحد دو اصطلاح را بی\u200cتوضیح جابه\u200cجا می\u200cکند.",
+      "must_detect": false
+    },
+    {
+      "quote": "باید در ذهن نگه داشت",
+      "category": "translationese",
+      "severity": "suggestion",
+      "suggestion": "باید در نظر داشت",
+      "explanation_fa": "این ترکیب در این بافت گرته\u200cبرداری لفظی است.",
+      "must_detect": false
+    },
+    {
+      "quote": "خطاها توسط سرویس ثبت می\u200cشوند و هشدارها توسط سرویس ارسال می\u200cشوند",
+      "category": "unnatural",
+      "severity": "suggestion",
+      "suggestion": "سرویس خطاها را ثبت و هشدارها را ارسال می\u200cکند",
+      "explanation_fa": "تکرار ساخت مجهول جمله را سنگین کرده است.",
+      "must_detect": false
+    },
+    {
+      "quote": "درخواست\u200cها را پردازش می\u200cکند سامانه به ترتیب ورود",
+      "category": "grammar",
+      "severity": "warning",
+      "suggestion": "سامانه درخواست\u200cها را به ترتیب ورود پردازش می\u200cکند",
+      "explanation_fa": "ترتیب اجزای جمله در نثر توضیحی بی\u200cدلیل نامعمول شده است.",
+      "must_detect": false
+    },
+    {
+      "quote": "این روش یک اندازه برای همه مناسب است نیست",
+      "category": "translationese",
+      "severity": "error",
+      "suggestion": "این روش برای همهٔ شرایط مناسب نیست",
+      "explanation_fa": "ترجمهٔ لفظی اصطلاح انگلیسی ساخت جمله را نیز مختل کرده است.",
+      "must_detect": true
+    }
+  ],
+  "reviewed": false
+}

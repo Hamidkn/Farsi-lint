@@ -1,0 +1,63 @@
+{
+  "sample": "01-formal-email",
+  "source": "synthetic",
+  "issues": [
+    {
+      "quote": "امیدوارم این پیام شما را خوب پیدا کند",
+      "category": "translationese",
+      "severity": "warning",
+      "suggestion": "امیدوارم حالتان خوب باشد",
+      "explanation_fa": "این عبارت ترجمهٔ لفظی یک تعارف انگلیسی است.",
+      "must_detect": true
+    },
+    {
+      "quote": "در پایان روز",
+      "category": "translationese",
+      "severity": "warning",
+      "suggestion": "در نهایت",
+      "explanation_fa": "در این جمله منظور نتیجهٔ نهایی است، نه پایان زمان روز.",
+      "must_detect": true
+    },
+    {
+      "quote": "همه روی یک صفحه هستیم",
+      "category": "translationese",
+      "severity": "warning",
+      "suggestion": "همه برداشت مشترکی داریم",
+      "explanation_fa": "این تعبیر انگلیسی در این بافت فارسی طبیعی نیست.",
+      "must_detect": true
+    },
+    {
+      "quote": "لطفاً پیشنهاد زمان جلسه را بررسی کنید توسط شما",
+      "category": "grammar",
+      "severity": "error",
+      "suggestion": "لطفاً پیشنهاد زمان جلسه را بررسی کنید",
+      "explanation_fa": "عبارت پایانی در ساخت فعل امری جایگاه دستوری ندارد.",
+      "must_detect": true
+    },
+    {
+      "quote": "پیوست را به همکاران فرستادم را",
+      "category": "grammar",
+      "severity": "error",
+      "suggestion": "پیوست را به همکاران فرستادم",
+      "explanation_fa": "نشانهٔ مفعول پس از فعل تکرار شده است.",
+      "must_detect": true
+    },
+    {
+      "quote": "همچنین لازم است دربارهٔ تقسیم وظایف گفت\u200cوگو کنیم، در حالی که گزارش اولیه توسط گروه برنامه\u200cریزی تهیه شده است",
+      "category": "unnatural",
+      "severity": "suggestion",
+      "suggestion": "لازم است دربارهٔ تقسیم وظایف گفت\u200cوگو کنیم؛ گروه برنامه\u200cریزی گزارش اولیه را تهیه کرده است",
+      "explanation_fa": "رابطهٔ تقابلی روشنی وجود ندارد و ساخت فعال روان\u200cتر است.",
+      "must_detect": false
+    },
+    {
+      "quote": "با تشکر و سپاس و قدردانی",
+      "category": "redundancy",
+      "severity": "suggestion",
+      "suggestion": "با سپاس",
+      "explanation_fa": "چند واژهٔ هم\u200cمعنا بدون افزودن اطلاعات تکرار شده\u200cاند.",
+      "must_detect": false
+    }
+  ],
+  "reviewed": false
+}

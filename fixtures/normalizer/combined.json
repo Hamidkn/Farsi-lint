@@ -1,0 +1,104 @@
+{
+  "rule": "combined",
+  "description_en": "Paragraph-level integration expectations, including protected spans and already-correct paragraphs.",
+  "cases": [
+    {
+      "input": "اين كتاب ها را مي خوانم, اما 2 صفحه مانده است...",
+      "expected": "این کتاب\u200cها را می\u200cخوانم، اما ۲ صفحه مانده است…",
+      "options": {},
+      "kind": "positive",
+      "note": "Five rule families: letters, affixes, punctuation, digits, ellipsis",
+      "reviewed": false,
+      "id": "combined-001"
+    },
+    {
+      "input": "او گفت: \"خانه ی من\". پنجره ها  باز است ؟",
+      "expected": "او گفت: «خانهٔ من». پنجره\u200cها باز است؟",
+      "options": {
+        "hehYeStyle": "hamza"
+      },
+      "kind": "positive",
+      "note": "Five families: quotes, ezafe, affixes, spaces, punctuation",
+      "reviewed": false,
+      "id": "combined-002"
+    },
+    {
+      "input": "اين [ متن ] را مي خوانم. نسخه v2.1 در https://example.invalid/كتاب?id=12 ثبت شده است...",
+      "expected": "این [متن] را می\u200cخوانم. نسخه v2.1 در https://example.invalid/كتاب?id=12 ثبت شده است…",
+      "options": {},
+      "kind": "positive",
+      "note": "Four families plus immutable URL/version",
+      "reviewed": false,
+      "id": "combined-003"
+    },
+    {
+      "input": "نـامه ی شما رسيد; پاسخ را مي نويسم.",
+      "expected": "نامهٔ شما رسید؛ پاسخ را می\u200cنویسم.",
+      "options": {
+        "hehYeStyle": "hamza"
+      },
+      "kind": "positive",
+      "note": "Five families: tatweel, ezafe, letters, punctuation, affixes",
+      "reviewed": false,
+      "id": "combined-004"
+    },
+    {
+      "input": "گزارش  ٤٥٦ آماده است. لطفاً ( بخش نخست ) را بخوانيد, سپس نظر بدهيد.",
+      "expected": "گزارش ۴۵۶ آماده است. لطفاً (بخش نخست) را بخوانید، سپس نظر بدهید.",
+      "options": {},
+      "kind": "positive",
+      "note": "Five families: spaces, digits, brackets, letters, punctuation",
+      "reviewed": false,
+      "id": "combined-005"
+    },
+    {
+      "input": "اين خانه ی من است. او گفت: “مي آيم”... كد `x = 12;` ثابت است.",
+      "expected": "این خانه\u200cی من است. او گفت: «می\u200cآیم»… کد `x = 12;` ثابت است.",
+      "options": {
+        "hehYeStyle": "zwnj"
+      },
+      "kind": "positive",
+      "note": "Five families with configured ezafe and protected inline code",
+      "reviewed": false,
+      "id": "combined-006"
+    },
+    {
+      "input": "من کتاب\u200cها را می\u200cخوانم. پنجرهٔ اتاق باز است.",
+      "expected": "من کتاب\u200cها را می\u200cخوانم. پنجرهٔ اتاق باز است.",
+      "options": {
+        "hehYeStyle": "hamza"
+      },
+      "kind": "negative",
+      "note": "Correct two-sentence Persian paragraph",
+      "reviewed": false,
+      "id": "combined-007"
+    },
+    {
+      "input": "نسخه v2.1 آماده است. راهنما در https://example.invalid/help?id=12 قرار دارد.",
+      "expected": "نسخه v2.1 آماده است. راهنما در https://example.invalid/help?id=12 قرار دارد.",
+      "options": {},
+      "kind": "negative",
+      "note": "Correct paragraph containing protected spans",
+      "reviewed": false,
+      "id": "combined-008"
+    },
+    {
+      "input": "او گفت: «خانه\u200cای خریده\u200cام». سپس نامه را خواند.",
+      "expected": "او گفت: «خانه\u200cای خریده\u200cام». سپس نامه را خواند.",
+      "options": {},
+      "kind": "negative",
+      "note": "Correct quoted indefinite and copular suffixes",
+      "reviewed": false,
+      "id": "combined-009"
+    },
+    {
+      "input": "بند نخست روشن است.\n\nبند دوم نیز روشن است؛ تغییری لازم نیست.",
+      "expected": "بند نخست روشن است.\n\nبند دوم نیز روشن است؛ تغییری لازم نیست.",
+      "options": {},
+      "kind": "negative",
+      "note": "Correct paragraphs retain their separation",
+      "reviewed": false,
+      "id": "combined-010"
+    }
+  ]
+}

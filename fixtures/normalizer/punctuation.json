@@ -1,0 +1,141 @@
+{
+  "rule": "punctuation",
+  "description_en": "Use Persian comma/semicolon/question mark in Persian prose, with context-aware spacing.",
+  "cases": [
+    {
+      "input": "سلام, دوست من.",
+      "expected": "سلام، دوست من.",
+      "options": {},
+      "kind": "positive",
+      "note": "Persian-context comma",
+      "reviewed": false,
+      "id": "punctuation-001"
+    },
+    {
+      "input": "آمدم; کسی نبود.",
+      "expected": "آمدم؛ کسی نبود.",
+      "options": {},
+      "kind": "positive",
+      "note": "Persian-context semicolon",
+      "reviewed": false,
+      "id": "punctuation-002"
+    },
+    {
+      "input": "آماده هستید?",
+      "expected": "آماده هستید؟",
+      "options": {},
+      "kind": "positive",
+      "note": "Persian-context question mark",
+      "reviewed": false,
+      "id": "punctuation-003"
+    },
+    {
+      "input": "سلام،دوست من.",
+      "expected": "سلام، دوست من.",
+      "options": {},
+      "kind": "positive",
+      "note": "Missing space after comma",
+      "reviewed": false,
+      "id": "punctuation-004"
+    },
+    {
+      "input": "آمدم؛کسی نبود.",
+      "expected": "آمدم؛ کسی نبود.",
+      "options": {},
+      "kind": "positive",
+      "note": "Missing space after semicolon",
+      "reviewed": false,
+      "id": "punctuation-005"
+    },
+    {
+      "input": "آماده است؟بله.",
+      "expected": "آماده است؟ بله.",
+      "options": {},
+      "kind": "positive",
+      "note": "Missing space after question mark",
+      "reviewed": false,
+      "id": "punctuation-006"
+    },
+    {
+      "input": "سلام ، دوست من.",
+      "expected": "سلام، دوست من.",
+      "options": {},
+      "kind": "positive",
+      "note": "Remove space before comma",
+      "reviewed": false,
+      "id": "punctuation-007"
+    },
+    {
+      "input": "تمام شد ؛ برویم.",
+      "expected": "تمام شد؛ برویم.",
+      "options": {},
+      "kind": "positive",
+      "note": "Remove space before semicolon",
+      "reviewed": false,
+      "id": "punctuation-008"
+    },
+    {
+      "input": "آماده است ?بله.",
+      "expected": "آماده است؟ بله.",
+      "options": {},
+      "kind": "positive",
+      "note": "Conversion plus spacing",
+      "reviewed": false,
+      "id": "punctuation-009"
+    },
+    {
+      "input": "سلام، دوست من؛ آماده هستید؟",
+      "expected": "سلام، دوست من؛ آماده هستید؟",
+      "options": {},
+      "kind": "negative",
+      "note": "Correct Persian marks",
+      "reviewed": false,
+      "id": "punctuation-010"
+    },
+    {
+      "input": "متن انگلیسی: Hello, friend; are you ready?",
+      "expected": "متن انگلیسی: Hello, friend; are you ready?",
+      "options": {},
+      "kind": "negative",
+      "note": "Whole embedded English sentence, including its punctuation",
+      "reviewed": false,
+      "id": "punctuation-011"
+    },
+    {
+      "input": "عدد ۳٫۵ ثبت شد.",
+      "expected": "عدد ۳٫۵ ثبت شد.",
+      "options": {},
+      "kind": "negative",
+      "note": "Persian decimal separator",
+      "reviewed": false,
+      "id": "punctuation-012"
+    },
+    {
+      "input": "The value is 3.5, not 4.0.",
+      "expected": "The value is 3.5, not 4.0.",
+      "options": {},
+      "kind": "negative",
+      "note": "English decimal numbers and punctuation",
+      "reviewed": false,
+      "id": "punctuation-013"
+    },
+    {
+      "input": "`if (x) { f(a, b); }`",
+      "expected": "`if (x) { f(a, b); }`",
+      "options": {},
+      "kind": "negative",
+      "note": "Code punctuation",
+      "reviewed": false,
+      "id": "punctuation-014"
+    },
+    {
+      "input": "https://example.invalid/search?q=1;mode=2",
+      "expected": "https://example.invalid/search?q=1;mode=2",
+      "options": {},
+      "kind": "negative",
+      "note": "Question mark and semicolon inside a URL",
+      "reviewed": false,
+      "id": "punctuation-015"
+    }
+  ]
+}

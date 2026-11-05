@@ -1,0 +1,141 @@
+{
+  "rule": "brackets-spacing",
+  "description_en": "No inner spaces and normal prose spacing outside parentheses/brackets/guillemets; preserve code and Markdown.",
+  "cases": [
+    {
+      "input": "این ( متن ) درست است.",
+      "expected": "این (متن) درست است.",
+      "options": {},
+      "kind": "positive",
+      "note": "Parentheses: trim both inner spaces",
+      "reviewed": false,
+      "id": "brackets-spacing-001"
+    },
+    {
+      "input": "این [ متن ] درست است.",
+      "expected": "این [متن] درست است.",
+      "options": {},
+      "kind": "positive",
+      "note": "Square brackets: trim inner spaces",
+      "reviewed": false,
+      "id": "brackets-spacing-002"
+    },
+    {
+      "input": "این « متن » درست است.",
+      "expected": "این «متن» درست است.",
+      "options": {},
+      "kind": "positive",
+      "note": "Guillemets: trim inner spaces",
+      "reviewed": false,
+      "id": "brackets-spacing-003"
+    },
+    {
+      "input": "این(متن) درست است.",
+      "expected": "این (متن) درست است.",
+      "options": {},
+      "kind": "positive",
+      "note": "Missing outer space before parentheses",
+      "reviewed": false,
+      "id": "brackets-spacing-004"
+    },
+    {
+      "input": "این (متن)درست است.",
+      "expected": "این (متن) درست است.",
+      "options": {},
+      "kind": "positive",
+      "note": "Missing outer space after parentheses",
+      "reviewed": false,
+      "id": "brackets-spacing-005"
+    },
+    {
+      "input": "این[متن] درست است.",
+      "expected": "این [متن] درست است.",
+      "options": {},
+      "kind": "positive",
+      "note": "Missing outer space before square brackets",
+      "reviewed": false,
+      "id": "brackets-spacing-006"
+    },
+    {
+      "input": "این [متن]درست است.",
+      "expected": "این [متن] درست است.",
+      "options": {},
+      "kind": "positive",
+      "note": "Missing outer space after square brackets",
+      "reviewed": false,
+      "id": "brackets-spacing-007"
+    },
+    {
+      "input": "او «سلام»گفت.",
+      "expected": "او «سلام» گفت.",
+      "options": {},
+      "kind": "positive",
+      "note": "Missing outer space after closing guillemet",
+      "reviewed": false,
+      "id": "brackets-spacing-008"
+    },
+    {
+      "input": "او«سلام» گفت.",
+      "expected": "او «سلام» گفت.",
+      "options": {},
+      "kind": "positive",
+      "note": "Missing outer space before opening guillemet",
+      "reviewed": false,
+      "id": "brackets-spacing-009"
+    },
+    {
+      "input": "این (متن) درست است.",
+      "expected": "این (متن) درست است.",
+      "options": {},
+      "kind": "negative",
+      "note": "Correct parentheses",
+      "reviewed": false,
+      "id": "brackets-spacing-010"
+    },
+    {
+      "input": "این [متن] درست است.",
+      "expected": "این [متن] درست است.",
+      "options": {},
+      "kind": "negative",
+      "note": "Correct square brackets",
+      "reviewed": false,
+      "id": "brackets-spacing-011"
+    },
+    {
+      "input": "او «سلام» گفت.",
+      "expected": "او «سلام» گفت.",
+      "options": {},
+      "kind": "negative",
+      "note": "Correct guillemets",
+      "reviewed": false,
+      "id": "brackets-spacing-012"
+    },
+    {
+      "input": "او گفت (بله).",
+      "expected": "او گفت (بله).",
+      "options": {},
+      "kind": "negative",
+      "note": "No space between closing bracket and full stop",
+      "reviewed": false,
+      "id": "brackets-spacing-013"
+    },
+    {
+      "input": "foo(x)",
+      "expected": "foo(x)",
+      "options": {},
+      "kind": "negative",
+      "note": "Bare function call is a technical span",
+      "reviewed": false,
+      "id": "brackets-spacing-014"
+    },
+    {
+      "input": "[راهنما](https://example.invalid/help)",
+      "expected": "[راهنما](https://example.invalid/help)",
+      "options": {},
+      "kind": "negative",
+      "note": "Markdown link syntax is immutable",
+      "reviewed": false,
+      "id": "brackets-spacing-015"
+    }
+  ]
+}

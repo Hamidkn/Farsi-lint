@@ -1,0 +1,2 @@
+/create_fixtures.py text eol=lf
+/fixtures/** text eol=lf

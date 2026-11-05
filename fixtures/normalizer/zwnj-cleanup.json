@@ -1,0 +1,186 @@
+{
+  "rule": "zwnj-cleanup",
+  "description_en": "Remove redundant ZWNJs; preserve meaningful joining boundaries.",
+  "cases": [
+    {
+      "input": "متن \u200cفارسی\u200c است.",
+      "expected": "متن فارسی است.",
+      "options": {},
+      "kind": "positive",
+      "note": "ZWNJ on either side of a regular space",
+      "reviewed": false,
+      "id": "zwnj-cleanup-001"
+    },
+    {
+      "input": "می\u200c\u200cروم",
+      "expected": "می\u200cروم",
+      "options": {},
+      "kind": "positive",
+      "note": "Double ZWNJ",
+      "reviewed": false,
+      "id": "zwnj-cleanup-002"
+    },
+    {
+      "input": "کتاب\u200c\u200c\u200cها",
+      "expected": "کتاب\u200cها",
+      "options": {},
+      "kind": "positive",
+      "note": "Triple ZWNJ",
+      "reviewed": false,
+      "id": "zwnj-cleanup-003"
+    },
+    {
+      "input": "\u200cکتاب",
+      "expected": "کتاب",
+      "options": {},
+      "kind": "positive",
+      "note": "ZWNJ at the start of a word",
+      "reviewed": false,
+      "id": "zwnj-cleanup-004"
+    },
+    {
+      "input": "کتاب\u200c",
+      "expected": "کتاب",
+      "options": {},
+      "kind": "positive",
+      "note": "ZWNJ at the end of a word",
+      "reviewed": false,
+      "id": "zwnj-cleanup-005"
+    },
+    {
+      "input": "ا\u200cبر",
+      "expected": "ابر",
+      "options": {},
+      "kind": "positive",
+      "note": "Redundant ZWNJ after alef",
+      "reviewed": false,
+      "id": "zwnj-cleanup-006"
+    },
+    {
+      "input": "د\u200cست",
+      "expected": "دست",
+      "options": {},
+      "kind": "positive",
+      "note": "Redundant ZWNJ after dal",
+      "reviewed": false,
+      "id": "zwnj-cleanup-007"
+    },
+    {
+      "input": "ذ\u200cهن",
+      "expected": "ذهن",
+      "options": {},
+      "kind": "positive",
+      "note": "Redundant ZWNJ after zal",
+      "reviewed": false,
+      "id": "zwnj-cleanup-008"
+    },
+    {
+      "input": "ر\u200cنگ",
+      "expected": "رنگ",
+      "options": {},
+      "kind": "positive",
+      "note": "Redundant ZWNJ after reh",
+      "reviewed": false,
+      "id": "zwnj-cleanup-009"
+    },
+    {
+      "input": "ز\u200cبان",
+      "expected": "زبان",
+      "options": {},
+      "kind": "positive",
+      "note": "Redundant ZWNJ after zeh",
+      "reviewed": false,
+      "id": "zwnj-cleanup-010"
+    },
+    {
+      "input": "ژ\u200cرف",
+      "expected": "ژرف",
+      "options": {},
+      "kind": "positive",
+      "note": "Redundant ZWNJ after zheh",
+      "reviewed": false,
+      "id": "zwnj-cleanup-011"
+    },
+    {
+      "input": "و\u200cقت",
+      "expected": "وقت",
+      "options": {},
+      "kind": "positive",
+      "note": "Redundant ZWNJ after waw",
+      "reviewed": false,
+      "id": "zwnj-cleanup-012"
+    },
+    {
+      "input": "می\u200cروم",
+      "expected": "می\u200cروم",
+      "options": {},
+      "kind": "negative",
+      "note": "Correct prefix boundary",
+      "reviewed": false,
+      "id": "zwnj-cleanup-013"
+    },
+    {
+      "input": "نمی\u200cدانم",
+      "expected": "نمی\u200cدانم",
+      "options": {},
+      "kind": "negative",
+      "note": "Correct negative-prefix boundary",
+      "reviewed": false,
+      "id": "zwnj-cleanup-014"
+    },
+    {
+      "input": "کتاب\u200cها",
+      "expected": "کتاب\u200cها",
+      "options": {},
+      "kind": "negative",
+      "note": "Correct plural boundary",
+      "reviewed": false,
+      "id": "zwnj-cleanup-015"
+    },
+    {
+      "input": "پنجره\u200cهای اتاق",
+      "expected": "پنجره\u200cهای اتاق",
+      "options": {},
+      "kind": "negative",
+      "note": "Correct heh-plural boundary",
+      "reviewed": false,
+      "id": "zwnj-cleanup-016"
+    },
+    {
+      "input": "خسته\u200cام",
+      "expected": "خسته\u200cام",
+      "options": {},
+      "kind": "negative",
+      "note": "Correct copular boundary",
+      "reviewed": false,
+      "id": "zwnj-cleanup-017"
+    },
+    {
+      "input": "خانه\u200cای",
+      "expected": "خانه\u200cای",
+      "options": {},
+      "kind": "negative",
+      "note": "Correct indefinite suffix",
+      "reviewed": false,
+      "id": "zwnj-cleanup-018"
+    },
+    {
+      "input": "بزرگ\u200cتر",
+      "expected": "بزرگ\u200cتر",
+      "options": {},
+      "kind": "negative",
+      "note": "Correct comparative boundary",
+      "reviewed": false,
+      "id": "zwnj-cleanup-019"
+    },
+    {
+      "input": "سخت\u200cترین",
+      "expected": "سخت\u200cترین",
+      "options": {},
+      "kind": "negative",
+      "note": "Correct superlative boundary",
+      "reviewed": false,
+      "id": "zwnj-cleanup-020"
+    }
+  ]
+}

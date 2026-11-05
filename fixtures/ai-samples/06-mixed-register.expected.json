@@ -1,0 +1,63 @@
+{
+  "sample": "06-mixed-register",
+  "source": "synthetic",
+  "issues": [
+    {
+      "quote": "بچه\u200cها، اگه وقت کردین یه نگاه هم به جدول بندازین",
+      "category": "register",
+      "severity": "error",
+      "suggestion": "همکاران، لطفاً در صورت امکان جدول را نیز بررسی کنید",
+      "explanation_fa": "خطاب و فعل\u200cهای محاوره\u200cای با آغاز رسمی متن ناسازگارند.",
+      "must_detect": true
+    },
+    {
+      "quote": "اگه نمی\u200cرسین، زودتر خبر بدین",
+      "category": "register",
+      "severity": "error",
+      "suggestion": "اگر امکان حضور ندارید، زودتر اطلاع دهید",
+      "explanation_fa": "جمله ناگهان از لحن رسمی به محاوره تغییر می\u200cکند.",
+      "must_detect": true
+    },
+    {
+      "quote": "یه تصمیم درست\u200cوحسابی بگیریم",
+      "category": "register",
+      "severity": "warning",
+      "suggestion": "تصمیم مناسبی بگیریم",
+      "explanation_fa": "واژه\u200cهای محاوره\u200cای در کنار فعل رسمی جمله یکدست نیستند.",
+      "must_detect": true
+    },
+    {
+      "quote": "مراتب جهت استحضار ایفاد می\u200cگردد",
+      "category": "unnatural",
+      "severity": "suggestion",
+      "suggestion": "این اطلاعات برای آگاهی شما ارسال می\u200cشود",
+      "explanation_fa": "عبارت اداری سنگین برای یک اطلاعیهٔ داخلی ضروری نیست.",
+      "must_detect": false
+    },
+    {
+      "quote": "خلاصه دیگه حواستون باشه جا نمونین",
+      "category": "register",
+      "severity": "error",
+      "suggestion": "لطفاً زمان جلسه را به خاطر بسپارید",
+      "explanation_fa": "این عبارت پس از جملهٔ بسیار رسمی تغییر لحن آشکاری دارد.",
+      "must_detect": true
+    },
+    {
+      "quote": "گزارش نهایی توسط مسئول هماهنگی تهیه خواهد شد",
+      "category": "unnatural",
+      "severity": "suggestion",
+      "suggestion": "مسئول هماهنگی گزارش نهایی را تهیه خواهد کرد",
+      "explanation_fa": "ساخت فعال در این اطلاعیه کوتاه\u200cتر و روشن\u200cتر است.",
+      "must_detect": false
+    },
+    {
+      "quote": "کاربردی و مفید و سودمند",
+      "category": "redundancy",
+      "severity": "suggestion",
+      "suggestion": "کاربردی",
+      "explanation_fa": "این صفت\u200cهای نزدیک به هم اطلاعات تازه\u200cای اضافه نمی\u200cکنند.",
+      "must_detect": false
+    }
+  ],
+  "reviewed": false
+}

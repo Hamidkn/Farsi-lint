@@ -1,0 +1,231 @@
+{
+  "rule": "zwnj",
+  "description_en": "Join unambiguous verbal prefixes and productive suffixes; preserve lexical lookalikes.",
+  "cases": [
+    {
+      "input": "می روم",
+      "expected": "می\u200cروم",
+      "options": {},
+      "kind": "positive",
+      "note": "Verbal prefix mi",
+      "reviewed": false,
+      "id": "zwnj-001"
+    },
+    {
+      "input": "نمی دانم",
+      "expected": "نمی\u200cدانم",
+      "options": {},
+      "kind": "positive",
+      "note": "Negative verbal prefix nemi",
+      "reviewed": false,
+      "id": "zwnj-002"
+    },
+    {
+      "input": "می نویسم",
+      "expected": "می\u200cنویسم",
+      "options": {},
+      "kind": "positive",
+      "note": "Mi before a joining stem",
+      "reviewed": false,
+      "id": "zwnj-003"
+    },
+    {
+      "input": "نمی بینیم",
+      "expected": "نمی\u200cبینیم",
+      "options": {},
+      "kind": "positive",
+      "note": "Nemi with a plural verb",
+      "reviewed": false,
+      "id": "zwnj-004"
+    },
+    {
+      "input": "کتاب ها",
+      "expected": "کتاب\u200cها",
+      "options": {},
+      "kind": "positive",
+      "note": "Plural ha after a joining letter",
+      "reviewed": false,
+      "id": "zwnj-005"
+    },
+    {
+      "input": "پنجره های اتاق",
+      "expected": "پنجره\u200cهای اتاق",
+      "options": {},
+      "kind": "positive",
+      "note": "Plural hay before ezafe",
+      "reviewed": false,
+      "id": "zwnj-006"
+    },
+    {
+      "input": "خانه هایی بزرگ",
+      "expected": "خانه\u200cهایی بزرگ",
+      "options": {},
+      "kind": "positive",
+      "note": "Indefinite plural hayi",
+      "reviewed": false,
+      "id": "zwnj-007"
+    },
+    {
+      "input": "بزرگ تر",
+      "expected": "بزرگ\u200cتر",
+      "options": {},
+      "kind": "positive",
+      "note": "Productive comparative suffix",
+      "reviewed": false,
+      "id": "zwnj-008"
+    },
+    {
+      "input": "سخت ترین",
+      "expected": "سخت\u200cترین",
+      "options": {},
+      "kind": "positive",
+      "note": "Productive superlative suffix",
+      "reviewed": false,
+      "id": "zwnj-009"
+    },
+    {
+      "input": "خسته ام",
+      "expected": "خسته\u200cام",
+      "options": {},
+      "kind": "positive",
+      "note": "First-person singular copula after silent heh",
+      "reviewed": false,
+      "id": "zwnj-010"
+    },
+    {
+      "input": "خسته ای",
+      "expected": "خسته\u200cای",
+      "options": {},
+      "kind": "positive",
+      "note": "Second-person singular copula after silent heh",
+      "reviewed": false,
+      "id": "zwnj-011"
+    },
+    {
+      "input": "خسته ایم",
+      "expected": "خسته\u200cایم",
+      "options": {},
+      "kind": "positive",
+      "note": "First-person plural copula after silent heh",
+      "reviewed": false,
+      "id": "zwnj-012"
+    },
+    {
+      "input": "خسته اید",
+      "expected": "خسته\u200cاید",
+      "options": {},
+      "kind": "positive",
+      "note": "Second-person plural copula after silent heh",
+      "reviewed": false,
+      "id": "zwnj-013"
+    },
+    {
+      "input": "خسته اند",
+      "expected": "خسته\u200cاند",
+      "options": {},
+      "kind": "positive",
+      "note": "Third-person plural copula after silent heh",
+      "reviewed": false,
+      "id": "zwnj-014"
+    },
+    {
+      "input": "خانه ای خریدم.",
+      "expected": "خانه\u200cای خریدم.",
+      "options": {},
+      "kind": "positive",
+      "note": "Indefinite suffix, not ezafe",
+      "reviewed": false,
+      "id": "zwnj-015"
+    },
+    {
+      "input": "میز و میوه",
+      "expected": "میز و میوه",
+      "options": {},
+      "kind": "negative",
+      "note": "Lexical words beginning with mi",
+      "reviewed": false,
+      "id": "zwnj-016"
+    },
+    {
+      "input": "میهن",
+      "expected": "میهن",
+      "options": {},
+      "kind": "negative",
+      "note": "Lexical prefix lookalike",
+      "reviewed": false,
+      "id": "zwnj-017"
+    },
+    {
+      "input": "هایل",
+      "expected": "هایل",
+      "options": {},
+      "kind": "negative",
+      "note": "Lexical boundary counterexample specified by the task",
+      "reviewed": false,
+      "id": "zwnj-018"
+    },
+    {
+      "input": "ترانه و بستر",
+      "expected": "ترانه و بستر",
+      "options": {},
+      "kind": "negative",
+      "note": "Lexical words containing tar",
+      "reviewed": false,
+      "id": "zwnj-019"
+    },
+    {
+      "input": "اندام",
+      "expected": "اندام",
+      "options": {},
+      "kind": "negative",
+      "note": "Lexical and prefix must not be detached",
+      "reviewed": false,
+      "id": "zwnj-020"
+    },
+    {
+      "input": "کتابی و ماهی",
+      "expected": "کتابی و ماهی",
+      "options": {},
+      "kind": "negative",
+      "note": "Final yeh is not a detachable suffix here",
+      "reviewed": false,
+      "id": "zwnj-021"
+    },
+    {
+      "input": "می\u200cروم و نمی\u200cدانم",
+      "expected": "می\u200cروم و نمی\u200cدانم",
+      "options": {},
+      "kind": "negative",
+      "note": "Correct verbal ZWNJs",
+      "reviewed": false,
+      "id": "zwnj-022"
+    },
+    {
+      "input": "کتاب\u200cها و پنجره\u200cهای اتاق",
+      "expected": "کتاب\u200cها و پنجره\u200cهای اتاق",
+      "options": {},
+      "kind": "negative",
+      "note": "Correct plural ZWNJs",
+      "reviewed": false,
+      "id": "zwnj-023"
+    },
+    {
+      "input": "بهتر و بیشتر",
+      "expected": "بهتر و بیشتر",
+      "options": {},
+      "kind": "negative",
+      "note": "Established joined comparative forms",
+      "reviewed": false,
+      "id": "zwnj-024"
+    },
+    {
+      "input": "items remain unchanged",
+      "expected": "items remain unchanged",
+      "options": {},
+      "kind": "negative",
+      "note": "Latin words",
+      "reviewed": false,
+      "id": "zwnj-025"
+    }
+  ]
+}

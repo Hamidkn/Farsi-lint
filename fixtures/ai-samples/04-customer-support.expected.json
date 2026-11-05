@@ -1,0 +1,63 @@
+{
+  "sample": "04-customer-support",
+  "source": "synthetic",
+  "issues": [
+    {
+      "quote": "ما درد شما را احساس می\u200cکنیم",
+      "category": "translationese",
+      "severity": "warning",
+      "suggestion": "ناراحتی شما را درک می\u200cکنیم",
+      "explanation_fa": "تعبیر لفظی درد در پاسخ به تأخیر سفارش نامتناسب است.",
+      "must_detect": true
+    },
+    {
+      "quote": "درخواست شما توسط گروه پشتیبانی دریافت شده است و بررسی آن توسط گروه ارسال انجام خواهد شد",
+      "category": "unnatural",
+      "severity": "suggestion",
+      "suggestion": "گروه پشتیبانی درخواست شما را دریافت کرده است و گروه ارسال آن را بررسی خواهد کرد",
+      "explanation_fa": "دو ساخت مجهول پیاپی پاسخ را اداری و سنگین کرده\u200cاند.",
+      "must_detect": false
+    },
+    {
+      "quote": "برای حرکت به جلو",
+      "category": "translationese",
+      "severity": "suggestion",
+      "suggestion": "برای ادامهٔ بررسی",
+      "explanation_fa": "این عبارت ترجمهٔ لفظی و مبهمی برای مرحلهٔ بعدی رسیدگی است.",
+      "must_detect": false
+    },
+    {
+      "quote": "در اسرع وقت هرچه زودتر",
+      "category": "redundancy",
+      "severity": "warning",
+      "suggestion": "در اسرع وقت",
+      "explanation_fa": "هر دو عبارت یک معنا را تکرار می\u200cکنند.",
+      "must_detect": true
+    },
+    {
+      "quote": "گزینهٔ اعتبار مشتری را انتخاب کنید",
+      "category": "terminology",
+      "severity": "warning",
+      "suggestion": "گزینهٔ موجودی حساب را انتخاب کنید",
+      "explanation_fa": "نام واحد برای موجودی قابل برداشت از سردرگمی جلوگیری می\u200cکند.",
+      "must_detect": true
+    },
+    {
+      "quote": "ما مسئولیت تأخیر را به دوش می\u200cگیریم",
+      "category": "collocation",
+      "severity": "warning",
+      "suggestion": "ما مسئولیت تأخیر را می\u200cپذیریم",
+      "explanation_fa": "فعل پذیرفتن با مسئولیت در این پاسخ رسمی طبیعی\u200cتر است.",
+      "must_detect": false
+    },
+    {
+      "quote": "بعدش یه پیام بده که بدونیم فرستادی",
+      "category": "register",
+      "severity": "error",
+      "suggestion": "سپس ارسال رسید را با پیامی تأیید کنید",
+      "explanation_fa": "عبارت محاوره\u200cای با لحن رسمی پاسخ پشتیبانی هماهنگ نیست.",
+      "must_detect": true
+    }
+  ],
+  "reviewed": false
+}

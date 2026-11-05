@@ -1,0 +1,186 @@
+{
+  "rule": "protected-spans",
+  "description_en": "All rules enabled: fix surrounding Persian but keep every protected span byte-identical.",
+  "cases": [
+    {
+      "input": "مي\u200cروم به https://example.invalid/كتاب?q=123;mode=2",
+      "expected": "می\u200cروم به https://example.invalid/كتاب?q=123;mode=2",
+      "options": {},
+      "kind": "positive",
+      "note": "Persian outside URL; Arabic kaf and punctuation inside preserved",
+      "reviewed": false,
+      "id": "protected-spans-001"
+    },
+    {
+      "input": "نشانی user123@example.invalid را مي\u200cبینم.",
+      "expected": "نشانی user123@example.invalid را می\u200cبینم.",
+      "options": {},
+      "kind": "positive",
+      "note": "Email preserved",
+      "reviewed": false,
+      "id": "protected-spans-002"
+    },
+    {
+      "input": "مي\u200cنویسم: `const s = \"كتاب 12...\";`",
+      "expected": "می\u200cنویسم: `const s = \"كتاب 12...\";`",
+      "options": {},
+      "kind": "positive",
+      "note": "Inline code with several apparent normalization triggers",
+      "reviewed": false,
+      "id": "protected-spans-003"
+    },
+    {
+      "input": "كد زیر:\n```js\nconst s = \"مي روم 12...\";\n```",
+      "expected": "کد زیر:\n```js\nconst s = \"مي روم 12...\";\n```",
+      "options": {},
+      "kind": "positive",
+      "note": "Fenced code containing malformed Persian",
+      "reviewed": false,
+      "id": "protected-spans-004"
+    },
+    {
+      "input": "كتاب برای @reader_123 است.",
+      "expected": "کتاب برای @reader_123 است.",
+      "options": {},
+      "kind": "positive",
+      "note": "Mention boundary preserved",
+      "reviewed": false,
+      "id": "protected-spans-005"
+    },
+    {
+      "input": "كتاب با #كتاب123 ثبت شد.",
+      "expected": "کتاب با #كتاب123 ثبت شد.",
+      "options": {},
+      "kind": "positive",
+      "note": "Persian hashtag letters and digits preserved",
+      "reviewed": false,
+      "id": "protected-spans-006"
+    },
+    {
+      "input": "اين فایل UTF8 است.",
+      "expected": "این فایل UTF8 است.",
+      "options": {},
+      "kind": "positive",
+      "note": "Latin alphanumeric token preserved",
+      "reviewed": false,
+      "id": "protected-spans-007"
+    },
+    {
+      "input": "نسخه v2.1 را مي\u200cبینم.",
+      "expected": "نسخه v2.1 را می\u200cبینم.",
+      "options": {},
+      "kind": "positive",
+      "note": "Version number next to Persian correction",
+      "reviewed": false,
+      "id": "protected-spans-008"
+    },
+    {
+      "input": "اين متن: Hello, friend; ready?",
+      "expected": "این متن: Hello, friend; ready?",
+      "options": {},
+      "kind": "positive",
+      "note": "Whole Latin-script run including punctuation preserved",
+      "reviewed": false,
+      "id": "protected-spans-009"
+    },
+    {
+      "input": "اين داده: {\"key\": \"كتاب 12\"}",
+      "expected": "این داده: {\"key\": \"كتاب 12\"}",
+      "options": {},
+      "kind": "positive",
+      "note": "JSON-like span preserved even with Persian content",
+      "reviewed": false,
+      "id": "protected-spans-010"
+    },
+    {
+      "input": "https://example.invalid/كتاب?q=123;mode=2",
+      "expected": "https://example.invalid/كتاب?q=123;mode=2",
+      "options": {},
+      "kind": "negative",
+      "note": "URL only",
+      "reviewed": false,
+      "id": "protected-spans-011"
+    },
+    {
+      "input": "user123@example.invalid",
+      "expected": "user123@example.invalid",
+      "options": {},
+      "kind": "negative",
+      "note": "Email only",
+      "reviewed": false,
+      "id": "protected-spans-012"
+    },
+    {
+      "input": "`const s = \"مي روم 123...\";`",
+      "expected": "`const s = \"مي روم 123...\";`",
+      "options": {},
+      "kind": "negative",
+      "note": "Inline code only",
+      "reviewed": false,
+      "id": "protected-spans-013"
+    },
+    {
+      "input": "```txt\nكتاب ها 123...\n```",
+      "expected": "```txt\nكتاب ها 123...\n```",
+      "options": {},
+      "kind": "negative",
+      "note": "Fenced code only",
+      "reviewed": false,
+      "id": "protected-spans-014"
+    },
+    {
+      "input": "@reader_123",
+      "expected": "@reader_123",
+      "options": {},
+      "kind": "negative",
+      "note": "Mention only",
+      "reviewed": false,
+      "id": "protected-spans-015"
+    },
+    {
+      "input": "#كتاب123",
+      "expected": "#كتاب123",
+      "options": {},
+      "kind": "negative",
+      "note": "Persian hashtag only",
+      "reviewed": false,
+      "id": "protected-spans-016"
+    },
+    {
+      "input": "Hello, friend; ready?",
+      "expected": "Hello, friend; ready?",
+      "options": {},
+      "kind": "negative",
+      "note": "English sentence with punctuation",
+      "reviewed": false,
+      "id": "protected-spans-017"
+    },
+    {
+      "input": "متن با نسخه 3.5.0 سازگار است.",
+      "expected": "متن با نسخه 3.5.0 سازگار است.",
+      "options": {},
+      "kind": "negative",
+      "note": "Bare technical version",
+      "reviewed": false,
+      "id": "protected-spans-018"
+    },
+    {
+      "input": "داده: {\"message\": \"خانه ي 123\"}",
+      "expected": "داده: {\"message\": \"خانه ي 123\"}",
+      "options": {},
+      "kind": "negative",
+      "note": "Structured data with Persian-looking errors",
+      "reviewed": false,
+      "id": "protected-spans-019"
+    },
+    {
+      "input": "[كتاب 123](https://example.invalid/help?q=1)",
+      "expected": "[كتاب 123](https://example.invalid/help?q=1)",
+      "options": {},
+      "kind": "negative",
+      "note": "Entire Markdown link is a protected technical span",
+      "reviewed": false,
+      "id": "protected-spans-020"
+    }
+  ]
+}

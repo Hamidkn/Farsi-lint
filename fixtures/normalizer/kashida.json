@@ -1,0 +1,141 @@
+{
+  "rule": "kashida",
+  "description_en": "Remove decorative U+0640 tatweel without changing otherwise correct text.",
+  "cases": [
+    {
+      "input": "سـلام",
+      "expected": "سلام",
+      "options": {},
+      "kind": "positive",
+      "note": "Single tatweel",
+      "reviewed": false,
+      "id": "kashida-001"
+    },
+    {
+      "input": "کتــاب",
+      "expected": "کتاب",
+      "options": {},
+      "kind": "positive",
+      "note": "Two consecutive tatweels",
+      "reviewed": false,
+      "id": "kashida-002"
+    },
+    {
+      "input": "خــانه",
+      "expected": "خانه",
+      "options": {},
+      "kind": "positive",
+      "note": "Tatweel inside a noun",
+      "reviewed": false,
+      "id": "kashida-003"
+    },
+    {
+      "input": "مـتـن",
+      "expected": "متن",
+      "options": {},
+      "kind": "positive",
+      "note": "Separated tatweels",
+      "reviewed": false,
+      "id": "kashida-004"
+    },
+    {
+      "input": "فـارسی",
+      "expected": "فارسی",
+      "options": {},
+      "kind": "positive",
+      "note": "Tatweel inside a language adjective",
+      "reviewed": false,
+      "id": "kashida-005"
+    },
+    {
+      "input": "بـله",
+      "expected": "بله",
+      "options": {},
+      "kind": "positive",
+      "note": "Tatweel in a short word",
+      "reviewed": false,
+      "id": "kashida-006"
+    },
+    {
+      "input": "نـه",
+      "expected": "نه",
+      "options": {},
+      "kind": "positive",
+      "note": "Tatweel before heh",
+      "reviewed": false,
+      "id": "kashida-007"
+    },
+    {
+      "input": "کـتاب\u200cها",
+      "expected": "کتاب\u200cها",
+      "options": {},
+      "kind": "positive",
+      "note": "Retain a valid ZWNJ while removing tatweel",
+      "reviewed": false,
+      "id": "kashida-008"
+    },
+    {
+      "input": "سـلام، خـوش آمدید.",
+      "expected": "سلام، خوش آمدید.",
+      "options": {},
+      "kind": "positive",
+      "note": "Tatweels in two words",
+      "reviewed": false,
+      "id": "kashida-009"
+    },
+    {
+      "input": "سلام",
+      "expected": "سلام",
+      "options": {},
+      "kind": "negative",
+      "note": "Undecorated word",
+      "reviewed": false,
+      "id": "kashida-010"
+    },
+    {
+      "input": "کتاب\u200cها",
+      "expected": "کتاب\u200cها",
+      "options": {},
+      "kind": "negative",
+      "note": "ZWNJ is not tatweel",
+      "reviewed": false,
+      "id": "kashida-011"
+    },
+    {
+      "input": "خانهٔ من",
+      "expected": "خانهٔ من",
+      "options": {},
+      "kind": "negative",
+      "note": "Combining hamza is not tatweel",
+      "reviewed": false,
+      "id": "kashida-012"
+    },
+    {
+      "input": "می\u200cروم",
+      "expected": "می\u200cروم",
+      "options": {},
+      "kind": "negative",
+      "note": "Verbal prefix boundary preserved",
+      "reviewed": false,
+      "id": "kashida-013"
+    },
+    {
+      "input": "متن فارسی.",
+      "expected": "متن فارسی.",
+      "options": {},
+      "kind": "negative",
+      "note": "Ordinary sentence",
+      "reviewed": false,
+      "id": "kashida-014"
+    },
+    {
+      "input": "[متن]",
+      "expected": "[متن]",
+      "options": {},
+      "kind": "negative",
+      "note": "Punctuation preserved",
+      "reviewed": false,
+      "id": "kashida-015"
+    }
+  ]
+}

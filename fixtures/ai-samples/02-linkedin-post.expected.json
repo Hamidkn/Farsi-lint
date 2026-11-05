@@ -1,0 +1,63 @@
+{
+  "sample": "02-linkedin-post",
+  "source": "synthetic",
+  "issues": [
+    {
+      "quote": "این موفقیت یک بازی را تغییر می\u200cدهد برای مسیر شغلی من",
+      "category": "translationese",
+      "severity": "warning",
+      "suggestion": "این موفقیت نقطهٔ عطفی در مسیر شغلی من است",
+      "explanation_fa": "ترجمهٔ لفظی اصطلاح انگلیسی و ترتیب اجزای جمله نامأنوس است.",
+      "must_detect": true
+    },
+    {
+      "quote": "از منطقهٔ راحتی خود بیرون قدم گذاشتم",
+      "category": "translationese",
+      "severity": "warning",
+      "suggestion": "کارهایی فراتر از تجربه\u200cهای معمول خود انجام دادم",
+      "explanation_fa": "ترکیب مکانی ترجمهٔ تحت\u200cاللفظی یک اصطلاح انگلیسی است.",
+      "must_detect": false
+    },
+    {
+      "quote": "تصمیم بسازم",
+      "category": "collocation",
+      "severity": "error",
+      "suggestion": "تصمیم بگیرم",
+      "explanation_fa": "در فارسی تصمیم را می\u200cگیرند، نه اینکه آن را بسازند.",
+      "must_detect": true
+    },
+    {
+      "quote": "رشد و توسعهٔ فردی و شخصی",
+      "category": "redundancy",
+      "severity": "suggestion",
+      "suggestion": "رشد فردی",
+      "explanation_fa": "صفت\u200cها و اسم\u200cهای نزدیک به هم بی\u200cدلیل تکرار شده\u200cاند.",
+      "must_detect": false
+    },
+    {
+      "quote": "این دستاورد توسط همکاران همراه من ممکن شده است",
+      "category": "unnatural",
+      "severity": "suggestion",
+      "suggestion": "همراهی همکارانم این دستاورد را ممکن کرده است",
+      "explanation_fa": "ساخت فعال نقش همکاران را روشن\u200cتر بیان می\u200cکند.",
+      "must_detect": false
+    },
+    {
+      "quote": "این مسئولیت هدایت پروژه نامیده می\u200cشود",
+      "category": "terminology",
+      "severity": "suggestion",
+      "suggestion": "این مسئولیت هدایت طرح نامیده می\u200cشود",
+      "explanation_fa": "برای اشاره به همان کار بهتر است اصطلاح طرح یکدست بماند.",
+      "must_detect": false
+    },
+    {
+      "quote": "احساس هیجان\u200cزده دارم",
+      "category": "collocation",
+      "severity": "error",
+      "suggestion": "احساس هیجان دارم",
+      "explanation_fa": "پس از احساس در این ساخت به اسم نیاز است.",
+      "must_detect": true
+    }
+  ],
+  "reviewed": false
+}

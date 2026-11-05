@@ -1,0 +1,226 @@
+{
+  "rule": "heh-ye",
+  "description_en": "Render ezafe after silent heh in the explicitly selected style; do not confuse it with indefinite/copular suffixes.",
+  "cases": [
+    {
+      "input": "خانه ی من",
+      "expected": "خانهٔ من",
+      "options": {
+        "hehYeStyle": "hamza"
+      },
+      "kind": "positive",
+      "note": "Separated ezafe yeh, hamza style",
+      "reviewed": false,
+      "id": "heh-ye-001"
+    },
+    {
+      "input": "خانه ی من",
+      "expected": "خانه\u200cی من",
+      "options": {
+        "hehYeStyle": "zwnj"
+      },
+      "kind": "positive",
+      "note": "Separated ezafe yeh, ZWNJ style",
+      "reviewed": false,
+      "id": "heh-ye-002"
+    },
+    {
+      "input": "نامه ی شما",
+      "expected": "نامهٔ شما",
+      "options": {
+        "hehYeStyle": "hamza"
+      },
+      "kind": "positive",
+      "note": "Letter with ezafe, hamza style",
+      "reviewed": false,
+      "id": "heh-ye-003"
+    },
+    {
+      "input": "نامه ی شما",
+      "expected": "نامه\u200cی شما",
+      "options": {
+        "hehYeStyle": "zwnj"
+      },
+      "kind": "positive",
+      "note": "Letter with ezafe, ZWNJ style",
+      "reviewed": false,
+      "id": "heh-ye-004"
+    },
+    {
+      "input": "پنجره ی اتاق",
+      "expected": "پنجرهٔ اتاق",
+      "options": {
+        "hehYeStyle": "hamza"
+      },
+      "kind": "positive",
+      "note": "Window with ezafe, hamza style",
+      "reviewed": false,
+      "id": "heh-ye-005"
+    },
+    {
+      "input": "پنجره ی اتاق",
+      "expected": "پنجره\u200cی اتاق",
+      "options": {
+        "hehYeStyle": "zwnj"
+      },
+      "kind": "positive",
+      "note": "Window with ezafe, ZWNJ style",
+      "reviewed": false,
+      "id": "heh-ye-006"
+    },
+    {
+      "input": "خانه\u200cی من",
+      "expected": "خانهٔ من",
+      "options": {
+        "hehYeStyle": "hamza"
+      },
+      "kind": "positive",
+      "note": "Convert the alternate ezafe style when explicitly selected",
+      "reviewed": false,
+      "id": "heh-ye-007"
+    },
+    {
+      "input": "خانهٔ من",
+      "expected": "خانه\u200cی من",
+      "options": {
+        "hehYeStyle": "zwnj"
+      },
+      "kind": "positive",
+      "note": "Convert hamza style to explicitly selected ZWNJ style",
+      "reviewed": false,
+      "id": "heh-ye-008"
+    },
+    {
+      "input": "درباره ی کتاب",
+      "expected": "دربارهٔ کتاب",
+      "options": {
+        "hehYeStyle": "hamza"
+      },
+      "kind": "positive",
+      "note": "Ezafe after a heh-final preposition",
+      "reviewed": false,
+      "id": "heh-ye-009"
+    },
+    {
+      "input": "درباره ی کتاب",
+      "expected": "درباره\u200cی کتاب",
+      "options": {
+        "hehYeStyle": "zwnj"
+      },
+      "kind": "positive",
+      "note": "Same preposition with alternate configured style",
+      "reviewed": false,
+      "id": "heh-ye-010"
+    },
+    {
+      "input": "خانهٔ من",
+      "expected": "خانهٔ من",
+      "options": {
+        "hehYeStyle": "hamza"
+      },
+      "kind": "negative",
+      "note": "Already in requested hamza style",
+      "reviewed": false,
+      "id": "heh-ye-011"
+    },
+    {
+      "input": "خانه\u200cی من",
+      "expected": "خانه\u200cی من",
+      "options": {
+        "hehYeStyle": "zwnj"
+      },
+      "kind": "negative",
+      "note": "Already in requested ZWNJ style",
+      "reviewed": false,
+      "id": "heh-ye-012"
+    },
+    {
+      "input": "خانه\u200cای خریدم.",
+      "expected": "خانه\u200cای خریدم.",
+      "options": {
+        "hehYeStyle": "hamza"
+      },
+      "kind": "negative",
+      "note": "Indefinite suffix is not ezafe",
+      "reviewed": false,
+      "id": "heh-ye-013"
+    },
+    {
+      "input": "خانه\u200cای خریدم.",
+      "expected": "خانه\u200cای خریدم.",
+      "options": {
+        "hehYeStyle": "zwnj"
+      },
+      "kind": "negative",
+      "note": "Indefinite suffix under alternate style",
+      "reviewed": false,
+      "id": "heh-ye-014"
+    },
+    {
+      "input": "خسته\u200cای.",
+      "expected": "خسته\u200cای.",
+      "options": {
+        "hehYeStyle": "hamza"
+      },
+      "kind": "negative",
+      "note": "Copular suffix is not ezafe",
+      "reviewed": false,
+      "id": "heh-ye-015"
+    },
+    {
+      "input": "نامه\u200cای رسید.",
+      "expected": "نامه\u200cای رسید.",
+      "options": {
+        "hehYeStyle": "zwnj"
+      },
+      "kind": "negative",
+      "note": "Indefinite letter",
+      "reviewed": false,
+      "id": "heh-ye-016"
+    },
+    {
+      "input": "دریا آرام است.",
+      "expected": "دریا آرام است.",
+      "options": {
+        "hehYeStyle": "hamza"
+      },
+      "kind": "negative",
+      "note": "Yeh within a lexical stem",
+      "reviewed": false,
+      "id": "heh-ye-017"
+    },
+    {
+      "input": "ماهی در آب است.",
+      "expected": "ماهی در آب است.",
+      "options": {
+        "hehYeStyle": "zwnj"
+      },
+      "kind": "negative",
+      "note": "Final yeh unrelated to silent-heh ezafe",
+      "reviewed": false,
+      "id": "heh-ye-018"
+    },
+    {
+      "input": "راه من",
+      "expected": "راه من",
+      "options": {
+        "hehYeStyle": "hamza"
+      },
+      "kind": "negative",
+      "note": "Pronounced final heh does not take this transformation",
+      "reviewed": false,
+      "id": "heh-ye-019"
+    },
+    {
+      "input": "کوه بلند",
+      "expected": "کوه بلند",
+      "options": {
+        "hehYeStyle": "zwnj"
+      },
+      "kind": "negative",
+      "note": "Pronounced final heh",
+      "reviewed": false,
+      "id": "heh-ye-020"
+    }
+  ]
+}

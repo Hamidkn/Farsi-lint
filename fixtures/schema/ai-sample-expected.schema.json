@@ -1,0 +1,88 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Synthetic Persian LLM-review expectations",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "sample",
+    "source",
+    "issues",
+    "reviewed"
+  ],
+  "properties": {
+    "sample": {
+      "type": "string",
+      "pattern": "^0[1-6]-[a-z]+(?:-[a-z]+)*$"
+    },
+    "source": {
+      "const": "synthetic"
+    },
+    "reviewed": {
+      "type": "boolean"
+    },
+    "issues": {
+      "type": "array",
+      "minItems": 5,
+      "maxItems": 10,
+      "contains": {
+        "properties": {
+          "must_detect": {
+            "const": true
+          }
+        },
+        "required": [
+          "must_detect"
+        ]
+      },
+      "minContains": 3,
+      "maxContains": 5,
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": [
+          "quote",
+          "category",
+          "severity",
+          "suggestion",
+          "explanation_fa",
+          "must_detect"
+        ],
+        "properties": {
+          "quote": {
+            "type": "string",
+            "minLength": 1
+          },
+          "category": {
+            "enum": [
+              "translationese",
+              "unnatural",
+              "grammar",
+              "register",
+              "collocation",
+              "redundancy",
+              "terminology",
+              "clarity"
+            ]
+          },
+          "severity": {
+            "enum": [
+              "error",
+              "warning",
+              "suggestion"
+            ]
+          },
+          "suggestion": {
+            "type": "string"
+          },
+          "explanation_fa": {
+            "type": "string",
+            "minLength": 1
+          },
+          "must_detect": {
+            "type": "boolean"
+          }
+        }
+      }
+    }
+  }
+}

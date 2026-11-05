@@ -1,0 +1,141 @@
+{
+  "rule": "ellipsis",
+  "description_en": "Replace prose three-dot sequences with U+2026, preserving technical sequences.",
+  "cases": [
+    {
+      "input": "هنوز منتظرم...",
+      "expected": "هنوز منتظرم…",
+      "options": {},
+      "kind": "positive",
+      "note": "Trailing prose ellipsis",
+      "reviewed": false,
+      "id": "ellipsis-001"
+    },
+    {
+      "input": "نمی\u200cدانم... شاید فردا.",
+      "expected": "نمی\u200cدانم… شاید فردا.",
+      "options": {},
+      "kind": "positive",
+      "note": "Medial prose ellipsis",
+      "reviewed": false,
+      "id": "ellipsis-002"
+    },
+    {
+      "input": "... و داستان ادامه دارد.",
+      "expected": "… و داستان ادامه دارد.",
+      "options": {},
+      "kind": "positive",
+      "note": "Leading ellipsis",
+      "reviewed": false,
+      "id": "ellipsis-003"
+    },
+    {
+      "input": "گفت: «شاید...»",
+      "expected": "گفت: «شاید…»",
+      "options": {},
+      "kind": "positive",
+      "note": "Ellipsis before closing guillemet",
+      "reviewed": false,
+      "id": "ellipsis-004"
+    },
+    {
+      "input": "(ادامه دارد...)",
+      "expected": "(ادامه دارد…)",
+      "options": {},
+      "kind": "positive",
+      "note": "Ellipsis inside parentheses",
+      "reviewed": false,
+      "id": "ellipsis-005"
+    },
+    {
+      "input": "آب، نان و ...",
+      "expected": "آب، نان و …",
+      "options": {},
+      "kind": "positive",
+      "note": "Open-ended list",
+      "reviewed": false,
+      "id": "ellipsis-006"
+    },
+    {
+      "input": "صبر کن... باز هم صبر کن...",
+      "expected": "صبر کن… باز هم صبر کن…",
+      "options": {},
+      "kind": "positive",
+      "note": "Two ellipses",
+      "reviewed": false,
+      "id": "ellipsis-007"
+    },
+    {
+      "input": "بند نخست...\nبند دوم",
+      "expected": "بند نخست…\nبند دوم",
+      "options": {},
+      "kind": "positive",
+      "note": "Keep line break after ellipsis",
+      "reviewed": false,
+      "id": "ellipsis-008"
+    },
+    {
+      "input": "بند نخست...\n\nبند دوم",
+      "expected": "بند نخست…\n\nبند دوم",
+      "options": {},
+      "kind": "positive",
+      "note": "Keep paragraph break after ellipsis",
+      "reviewed": false,
+      "id": "ellipsis-009"
+    },
+    {
+      "input": "هنوز منتظرم…",
+      "expected": "هنوز منتظرم…",
+      "options": {},
+      "kind": "negative",
+      "note": "Already a Unicode ellipsis",
+      "reviewed": false,
+      "id": "ellipsis-010"
+    },
+    {
+      "input": "تمام شد.",
+      "expected": "تمام شد.",
+      "options": {},
+      "kind": "negative",
+      "note": "A single full stop",
+      "reviewed": false,
+      "id": "ellipsis-011"
+    },
+    {
+      "input": "`const copy = [...items];`",
+      "expected": "`const copy = [...items];`",
+      "options": {},
+      "kind": "negative",
+      "note": "Spread operator in inline code",
+      "reviewed": false,
+      "id": "ellipsis-012"
+    },
+    {
+      "input": "```python\nvalue = ...\n```",
+      "expected": "```python\nvalue = ...\n```",
+      "options": {},
+      "kind": "negative",
+      "note": "Ellipsis literal in fenced code",
+      "reviewed": false,
+      "id": "ellipsis-013"
+    },
+    {
+      "input": "نسخه v1.0...v2.0 پشتیبانی می\u200cشود.",
+      "expected": "نسخه v1.0...v2.0 پشتیبانی می\u200cشود.",
+      "options": {},
+      "kind": "negative",
+      "note": "Technical version range is not prose ellipsis",
+      "reviewed": false,
+      "id": "ellipsis-014"
+    },
+    {
+      "input": "https://example.invalid/path.../file",
+      "expected": "https://example.invalid/path.../file",
+      "options": {},
+      "kind": "negative",
+      "note": "Three dots in URL path",
+      "reviewed": false,
+      "id": "ellipsis-015"
+    }
+  ]
+}

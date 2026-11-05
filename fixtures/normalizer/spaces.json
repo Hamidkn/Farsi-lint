@@ -1,0 +1,141 @@
+{
+  "rule": "spaces",
+  "description_en": "Collapse excess horizontal spaces and remove trailing/pre-punctuation spaces without flattening lines.",
+  "cases": [
+    {
+      "input": "متن  فارسی",
+      "expected": "متن فارسی",
+      "options": {},
+      "kind": "positive",
+      "note": "Double space",
+      "reviewed": false,
+      "id": "spaces-001"
+    },
+    {
+      "input": "این   متن است.",
+      "expected": "این متن است.",
+      "options": {},
+      "kind": "positive",
+      "note": "Triple space",
+      "reviewed": false,
+      "id": "spaces-002"
+    },
+    {
+      "input": "سلام ",
+      "expected": "سلام",
+      "options": {},
+      "kind": "positive",
+      "note": "Trailing space at end of input",
+      "reviewed": false,
+      "id": "spaces-003"
+    },
+    {
+      "input": "سلام   ",
+      "expected": "سلام",
+      "options": {},
+      "kind": "positive",
+      "note": "Several trailing spaces",
+      "reviewed": false,
+      "id": "spaces-004"
+    },
+    {
+      "input": "سطر نخست  \nسطر دوم",
+      "expected": "سطر نخست\nسطر دوم",
+      "options": {},
+      "kind": "positive",
+      "note": "Trailing spaces on a line; keep newline",
+      "reviewed": false,
+      "id": "spaces-005"
+    },
+    {
+      "input": "سلام ، دوست من.",
+      "expected": "سلام، دوست من.",
+      "options": {},
+      "kind": "positive",
+      "note": "Space before comma",
+      "reviewed": false,
+      "id": "spaces-006"
+    },
+    {
+      "input": "تمام شد .",
+      "expected": "تمام شد.",
+      "options": {},
+      "kind": "positive",
+      "note": "Space before full stop",
+      "reviewed": false,
+      "id": "spaces-007"
+    },
+    {
+      "input": "آماده است ؟",
+      "expected": "آماده است؟",
+      "options": {},
+      "kind": "positive",
+      "note": "Space before question mark",
+      "reviewed": false,
+      "id": "spaces-008"
+    },
+    {
+      "input": "متن  نخست\n\nمتن  دوم",
+      "expected": "متن نخست\n\nمتن دوم",
+      "options": {},
+      "kind": "positive",
+      "note": "Collapse spaces while preserving paragraph break",
+      "reviewed": false,
+      "id": "spaces-009"
+    },
+    {
+      "input": "متن فارسی",
+      "expected": "متن فارسی",
+      "options": {},
+      "kind": "negative",
+      "note": "Single inter-word space",
+      "reviewed": false,
+      "id": "spaces-010"
+    },
+    {
+      "input": "سطر نخست\nسطر دوم",
+      "expected": "سطر نخست\nسطر دوم",
+      "options": {},
+      "kind": "negative",
+      "note": "Intentional line break",
+      "reviewed": false,
+      "id": "spaces-011"
+    },
+    {
+      "input": "بند نخست\n\nبند دوم",
+      "expected": "بند نخست\n\nبند دوم",
+      "options": {},
+      "kind": "negative",
+      "note": "Intentional paragraph break",
+      "reviewed": false,
+      "id": "spaces-012"
+    },
+    {
+      "input": "بند نخست\n\n\nبند دوم",
+      "expected": "بند نخست\n\n\nبند دوم",
+      "options": {},
+      "kind": "negative",
+      "note": "Multiple intentional blank lines",
+      "reviewed": false,
+      "id": "spaces-013"
+    },
+    {
+      "input": "سلام، دوست من.",
+      "expected": "سلام، دوست من.",
+      "options": {},
+      "kind": "negative",
+      "note": "Correct punctuation spacing",
+      "reviewed": false,
+      "id": "spaces-014"
+    },
+    {
+      "input": "سطر نخست\nسطر دوم\n",
+      "expected": "سطر نخست\nسطر دوم\n",
+      "options": {},
+      "kind": "negative",
+      "note": "Terminal newline preserved",
+      "reviewed": false,
+      "id": "spaces-015"
+    }
+  ]
+}

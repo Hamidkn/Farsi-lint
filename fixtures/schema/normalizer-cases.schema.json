@@ -1,0 +1,451 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Persian normalizer fixture file",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "rule",
+    "description_en",
+    "cases"
+  ],
+  "properties": {
+    "rule": {
+      "enum": [
+        "arabic-letters",
+        "digits",
+        "zwnj",
+        "zwnj-cleanup",
+        "spaces",
+        "punctuation",
+        "quotes",
+        "brackets-spacing",
+        "ellipsis",
+        "kashida",
+        "heh-ye",
+        "protected-spans",
+        "combined"
+      ]
+    },
+    "description_en": {
+      "type": "string",
+      "minLength": 1
+    },
+    "cases": {
+      "type": "array",
+      "minItems": 10,
+      "maxItems": 25,
+      "items": {
+        "$ref": "#/$defs/case"
+      }
+    }
+  },
+  "$defs": {
+    "case": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "id",
+        "input",
+        "expected",
+        "options",
+        "kind",
+        "note",
+        "reviewed"
+      ],
+      "properties": {
+        "id": {
+          "type": "string",
+          "pattern": "^[a-z-]+-\\d{3}$"
+        },
+        "input": {
+          "type": "string"
+        },
+        "expected": {
+          "type": "string"
+        },
+        "options": {
+          "type": "object",
+          "additionalProperties": false,
+          "properties": {
+            "digits": {
+              "enum": [
+                "persian",
+                "keep"
+              ]
+            },
+            "hehYeStyle": {
+              "enum": [
+                "hamza",
+                "zwnj"
+              ]
+            }
+          }
+        },
+        "kind": {
+          "enum": [
+            "positive",
+            "negative"
+          ]
+        },
+        "note": {
+          "type": "string",
+          "minLength": 1
+        },
+        "reviewed": {
+          "type": "boolean"
+        }
+      }
+    }
+  },
+  "allOf": [
+    {
+      "if": {
+        "properties": {
+          "rule": {
+            "const": "combined"
+          }
+        }
+      },
+      "then": {
+        "properties": {
+          "cases": {
+            "minItems": 10,
+            "maxItems": 10
+          }
+        }
+      },
+      "else": {
+        "properties": {
+          "cases": {
+            "minItems": 15,
+            "maxItems": 25
+          }
+        }
+      }
+    },
+    {
+      "if": {
+        "properties": {
+          "cases": {
+            "minItems": 10,
+            "maxItems": 10
+          }
+        }
+      },
+      "then": {
+        "properties": {
+          "cases": {
+            "contains": {
+              "properties": {
+                "kind": {
+                  "const": "negative"
+                }
+              },
+              "required": [
+                "kind"
+              ]
+            },
+            "minContains": 4
+          }
+        }
+      }
+    },
+    {
+      "if": {
+        "properties": {
+          "cases": {
+            "minItems": 15,
+            "maxItems": 15
+          }
+        }
+      },
+      "then": {
+        "properties": {
+          "cases": {
+            "contains": {
+              "properties": {
+                "kind": {
+                  "const": "negative"
+                }
+              },
+              "required": [
+                "kind"
+              ]
+            },
+            "minContains": 6
+          }
+        }
+      }
+    },
+    {
+      "if": {
+        "properties": {
+          "cases": {
+            "minItems": 16,
+            "maxItems": 16
+          }
+        }
+      },
+      "then": {
+        "properties": {
+          "cases": {
+            "contains": {
+              "properties": {
+                "kind": {
+                  "const": "negative"
+                }
+              },
+              "required": [
+                "kind"
+              ]
+            },
+            "minContains": 7
+          }
+        }
+      }
+    },
+    {
+      "if": {
+        "properties": {
+          "cases": {
+            "minItems": 17,
+            "maxItems": 17
+          }
+        }
+      },
+      "then": {
+        "properties": {
+          "cases": {
+            "contains": {
+              "properties": {
+                "kind": {
+                  "const": "negative"
+                }
+              },
+              "required": [
+                "kind"
+              ]
+            },
+            "minContains": 7
+          }
+        }
+      }
+    },
+    {
+      "if": {
+        "properties": {
+          "cases": {
+            "minItems": 18,
+            "maxItems": 18
+          }
+        }
+      },
+      "then": {
+        "properties": {
+          "cases": {
+            "contains": {
+              "properties": {
+                "kind": {
+                  "const": "negative"
+                }
+              },
+              "required": [
+                "kind"
+              ]
+            },
+            "minContains": 8
+          }
+        }
+      }
+    },
+    {
+      "if": {
+        "properties": {
+          "cases": {
+            "minItems": 19,
+            "maxItems": 19
+          }
+        }
+      },
+      "then": {
+        "properties": {
+          "cases": {
+            "contains": {
+              "properties": {
+                "kind": {
+                  "const": "negative"
+                }
+              },
+              "required": [
+                "kind"
+              ]
+            },
+            "minContains": 8
+          }
+        }
+      }
+    },
+    {
+      "if": {
+        "properties": {
+          "cases": {
+            "minItems": 20,
+            "maxItems": 20
+          }
+        }
+      },
+      "then": {
+        "properties": {
+          "cases": {
+            "contains": {
+              "properties": {
+                "kind": {
+                  "const": "negative"
+                }
+              },
+              "required": [
+                "kind"
+              ]
+            },
+            "minContains": 8
+          }
+        }
+      }
+    },
+    {
+      "if": {
+        "properties": {
+          "cases": {
+            "minItems": 21,
+            "maxItems": 21
+          }
+        }
+      },
+      "then": {
+        "properties": {
+          "cases": {
+            "contains": {
+              "properties": {
+                "kind": {
+                  "const": "negative"
+                }
+              },
+              "required": [
+                "kind"
+              ]
+            },
+            "minContains": 9
+          }
+        }
+      }
+    },
+    {
+      "if": {
+        "properties": {
+          "cases": {
+            "minItems": 22,
+            "maxItems": 22
+          }
+        }
+      },
+      "then": {
+        "properties": {
+          "cases": {
+            "contains": {
+              "properties": {
+                "kind": {
+                  "const": "negative"
+                }
+              },
+              "required": [
+                "kind"
+              ]
+            },
+            "minContains": 9
+          }
+        }
+      }
+    },
+    {
+      "if": {
+        "properties": {
+          "cases": {
+            "minItems": 23,
+            "maxItems": 23
+          }
+        }
+      },
+      "then": {
+        "properties": {
+          "cases": {
+            "contains": {
+              "properties": {
+                "kind": {
+                  "const": "negative"
+                }
+              },
+              "required": [
+                "kind"
+              ]
+            },
+            "minContains": 10
+          }
+        }
+      }
+    },
+    {
+      "if": {
+        "properties": {
+          "cases": {
+            "minItems": 24,
+            "maxItems": 24
+          }
+        }
+      },
+      "then": {
+        "properties": {
+          "cases": {
+            "contains": {
+              "properties": {
+                "kind": {
+                  "const": "negative"
+                }
+              },
+              "required": [
+                "kind"
+              ]
+            },
+            "minContains": 10
+          }
+        }
+      }
+    },
+    {
+      "if": {
+        "properties": {
+          "cases": {
+            "minItems": 25,
+            "maxItems": 25
+          }
+        }
+      },
+      "then": {
+        "properties": {
+          "cases": {
+            "contains": {
+              "properties": {
+                "kind": {
+                  "const": "negative"
+                }
+              },
+              "required": [
+                "kind"
+              ]
+            },
+            "minContains": 10
+          }
+        }
+      }
+    }
+  ]
+}

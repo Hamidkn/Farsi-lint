@@ -1,0 +1,141 @@
+{
+  "rule": "quotes",
+  "description_en": "Convert paired straight/curly quotes around Persian prose, preserving English and structured data.",
+  "cases": [
+    {
+      "input": "او گفت: \"سلام\".",
+      "expected": "او گفت: «سلام».",
+      "options": {},
+      "kind": "positive",
+      "note": "Straight quotation marks",
+      "reviewed": false,
+      "id": "quotes-001"
+    },
+    {
+      "input": "او گفت: “سلام”.",
+      "expected": "او گفت: «سلام».",
+      "options": {},
+      "kind": "positive",
+      "note": "Curly quotation marks",
+      "reviewed": false,
+      "id": "quotes-002"
+    },
+    {
+      "input": "\"کتاب\" را بخوان.",
+      "expected": "«کتاب» را بخوان.",
+      "options": {},
+      "kind": "positive",
+      "note": "Quoted object at sentence start",
+      "reviewed": false,
+      "id": "quotes-003"
+    },
+    {
+      "input": "“پایان”",
+      "expected": "«پایان»",
+      "options": {},
+      "kind": "positive",
+      "note": "Standalone curly quotation",
+      "reviewed": false,
+      "id": "quotes-004"
+    },
+    {
+      "input": "عنوان: \"راهنمای سفر\"",
+      "expected": "عنوان: «راهنمای سفر»",
+      "options": {},
+      "kind": "positive",
+      "note": "Multiword title",
+      "reviewed": false,
+      "id": "quotes-005"
+    },
+    {
+      "input": "او نوشت: \"می\u200cآیم\".",
+      "expected": "او نوشت: «می\u200cآیم».",
+      "options": {},
+      "kind": "positive",
+      "note": "Retain an existing ZWNJ",
+      "reviewed": false,
+      "id": "quotes-006"
+    },
+    {
+      "input": "\"بله\" یا \"نه\"؟",
+      "expected": "«بله» یا «نه»؟",
+      "options": {},
+      "kind": "positive",
+      "note": "Two independent quoted spans",
+      "reviewed": false,
+      "id": "quotes-007"
+    },
+    {
+      "input": "او گفت: \" سلام \".",
+      "expected": "او گفت: «سلام».",
+      "options": {},
+      "kind": "positive",
+      "note": "Trim spaces just inside quotes",
+      "reviewed": false,
+      "id": "quotes-008"
+    },
+    {
+      "input": "عنوان: “خانهٔ روشن”",
+      "expected": "عنوان: «خانهٔ روشن»",
+      "options": {},
+      "kind": "positive",
+      "note": "Keep combining hamza inside converted quotes",
+      "reviewed": false,
+      "id": "quotes-009"
+    },
+    {
+      "input": "او گفت: «سلام».",
+      "expected": "او گفت: «سلام».",
+      "options": {},
+      "kind": "negative",
+      "note": "Correct guillemets",
+      "reviewed": false,
+      "id": "quotes-010"
+    },
+    {
+      "input": "She said \"hello\".",
+      "expected": "She said \"hello\".",
+      "options": {},
+      "kind": "negative",
+      "note": "English straight quotes",
+      "reviewed": false,
+      "id": "quotes-011"
+    },
+    {
+      "input": "She said “hello”.",
+      "expected": "She said “hello”.",
+      "options": {},
+      "kind": "negative",
+      "note": "English curly quotes",
+      "reviewed": false,
+      "id": "quotes-012"
+    },
+    {
+      "input": "`print(\"سلام\")`",
+      "expected": "`print(\"سلام\")`",
+      "options": {},
+      "kind": "negative",
+      "note": "Code containing Persian text",
+      "reviewed": false,
+      "id": "quotes-013"
+    },
+    {
+      "input": "{\"message\": \"سلام\"}",
+      "expected": "{\"message\": \"سلام\"}",
+      "options": {},
+      "kind": "negative",
+      "note": "JSON-like object, including its Persian value",
+      "reviewed": false,
+      "id": "quotes-014"
+    },
+    {
+      "input": "متن انگلیسی: Say \"hello\" now.",
+      "expected": "متن انگلیسی: Say \"hello\" now.",
+      "options": {},
+      "kind": "negative",
+      "note": "English quotation embedded in Persian prose",
+      "reviewed": false,
+      "id": "quotes-015"
+    }
+  ]
+}

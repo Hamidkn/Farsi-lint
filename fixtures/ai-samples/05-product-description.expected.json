@@ -1,0 +1,63 @@
+{
+  "sample": "05-product-description",
+  "source": "synthetic",
+  "issues": [
+    {
+      "quote": "تجربهٔ شما را به سطح بعدی می\u200cبرد",
+      "category": "translationese",
+      "severity": "warning",
+      "suggestion": "مطالعه و کار روزانه را آسان\u200cتر می\u200cکند",
+      "explanation_fa": "این شعار ترجمهٔ لفظی است و مزیت مشخصی را بیان نمی\u200cکند.",
+      "must_detect": true
+    },
+    {
+      "quote": "کار بیشتری را انجام دهید با تلاش کمتر",
+      "category": "unnatural",
+      "severity": "warning",
+      "suggestion": "با تلاش کمتر کار بیشتری انجام دهید",
+      "explanation_fa": "جای عبارت قیدی از ترتیب معمول فارسی فاصله گرفته است.",
+      "must_detect": false
+    },
+    {
+      "quote": "این دستگاه مصرف انرژی را پس\u200cانداز می\u200cکند",
+      "category": "collocation",
+      "severity": "error",
+      "suggestion": "این دستگاه انرژی کمتری مصرف می\u200cکند",
+      "explanation_fa": "مصرف را پس\u200cانداز نمی\u200cکنند.",
+      "must_detect": true
+    },
+    {
+      "quote": "توان چراغ با عنوان قدرت نوری معرفی می\u200cشود",
+      "category": "terminology",
+      "severity": "error",
+      "suggestion": "همان مقدار با عنوان توان مصرفی معرفی می\u200cشود",
+      "explanation_fa": "توان مصرفی و کمیت مربوط به نور دو مفهوم یکسان نیستند.",
+      "must_detect": true
+    },
+    {
+      "quote": "این دو عنوان برای همان عدد به کار رفته\u200cاند",
+      "category": "clarity",
+      "severity": "warning",
+      "suggestion": "عدد هشت وات فقط توان مصرفی را نشان می\u200cدهد",
+      "explanation_fa": "توضیح باید روشن کند که عدد مذکور دربارهٔ مصرف برق است.",
+      "must_detect": false
+    },
+    {
+      "quote": "منحصربه\u200cفرد و بی\u200cنظیر و یگانه",
+      "category": "redundancy",
+      "severity": "suggestion",
+      "suggestion": "مناسب",
+      "explanation_fa": "چند صفت نزدیک به هم بدون دلیل یا شاهد تکرار شده\u200cاند.",
+      "must_detect": false
+    },
+    {
+      "quote": "نیاز شما را انجام می\u200cدهد",
+      "category": "collocation",
+      "severity": "error",
+      "suggestion": "نیاز شما را برآورده می\u200cکند",
+      "explanation_fa": "فعل مناسب برای نیاز در این بافت برآورده کردن است.",
+      "must_detect": true
+    }
+  ],
+  "reviewed": false
+}
