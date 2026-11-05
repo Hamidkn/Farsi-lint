@@ -1,0 +1,6 @@
+{
+  "name": "Farsi-lint — Persian Text & AI Copyeditor",
+  "description": "Chrome extension and review engine for Persian (Farsi) orthography, typography, and AI-generated text quality inspection.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

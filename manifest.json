@@ -1,0 +1,46 @@
+{
+  "manifest_version": 3,
+  "name": "فارسی‌لینت | Farsi-lint",
+  "version": "1.0.0",
+  "description": "ویرایشگر هوشمند و ناظر نگارش و رسم‌الخط متن‌های فارسی و متون هوش مصنوعی",
+  "default_locale": "fa",
+  "permissions": [
+    "storage",
+    "contextMenus",
+    "sidePanel",
+    "activeTab",
+    "scripting"
+  ],
+  "background": {
+    "service_worker": "src/background/index.ts",
+    "type": "module"
+  },
+  "action": {
+    "default_title": "فارسی‌لینت",
+    "default_popup": "index.html"
+  },
+  "side_panel": {
+    "default_path": "index.html"
+  },
+  "options_ui": {
+    "page": "index.html",
+    "open_in_tab": true
+  },
+  "content_scripts": [
+    {
+      "matches": ["<all_urls>"],
+      "js": ["src/content/index.ts"],
+      "css": ["src/content/overlay.css"],
+      "run_at": "document_idle"
+    }
+  ],
+  "commands": {
+    "review-persian-text": {
+      "suggested_key": {
+        "default": "Ctrl+Shift+Y",
+        "mac": "Command+Shift+Y"
+      },
+      "description": "بازبینی متن فارسی انتخاب‌شده با فارسی‌لینت"
+    }
+  }
+}

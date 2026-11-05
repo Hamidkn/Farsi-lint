@@ -1,0 +1,137 @@
+/**
+ * @license
+ * SPDX-License-Identifier: Apache-2.0
+ */
+
+/* Inline underline overlay styling for Farsi-lint */
+.farsi-lint-overlay-container {
+  position: absolute;
+  pointer-events: none;
+  overflow: hidden;
+  z-index: 999990;
+  box-sizing: border-box;
+}
+
+.farsi-lint-highlight {
+  position: absolute;
+  pointer-events: auto;
+  cursor: pointer;
+  border-radius: 2px;
+  background-color: transparent;
+  transition: background-color 0.15s ease;
+}
+
+/* Wavy underline variants based on severity */
+.farsi-lint-highlight.severity-error {
+  text-decoration: underline wavy #ef4444 2px;
+  text-underline-offset: 3px;
+  background-color: rgba(239, 68, 68, 0.08);
+}
+
+.farsi-lint-highlight.severity-warning {
+  text-decoration: underline wavy #f97316 2px;
+  text-underline-offset: 3px;
+  background-color: rgba(249, 115, 22, 0.08);
+}
+
+.farsi-lint-highlight.severity-suggestion {
+  text-decoration: underline wavy #3b82f6 2px;
+  text-underline-offset: 3px;
+  background-color: rgba(59, 130, 246, 0.08);
+}
+
+.farsi-lint-highlight:hover {
+  background-color: rgba(59, 130, 246, 0.2);
+}
+
+/* Floating Quick Action Button */
+.farsi-lint-floating-btn {
+  position: absolute;
+  z-index: 999999;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  padding: 5px 10px;
+  background: #ffffff;
+  color: #1e293b;
+  border: 1px solid #cbd5e1;
+  border-radius: 9999px;
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.12);
+  font-family: inherit;
+  font-size: 12px;
+  font-weight: 500;
+  direction: rtl;
+  cursor: pointer;
+  transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+  user-select: none;
+}
+
+.farsi-lint-floating-btn:hover {
+  background: #f8fafc;
+  border-color: #3b82f6;
+  color: #1d4ed8;
+  transform: translateY(-1px);
+  box-shadow: 0 6px 18px rgba(37, 99, 235, 0.18);
+}
+
+.farsi-lint-floating-btn svg {
+  width: 14px;
+  height: 14px;
+  color: #2563eb;
+}
+
+/* Tooltip for quick fix */
+.farsi-lint-tooltip {
+  position: absolute;
+  z-index: 1000000;
+  max-width: 320px;
+  background: #0f172a;
+  color: #ffffff;
+  padding: 10px 12px;
+  border-radius: 8px;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.25);
+  font-family: inherit;
+  font-size: 13px;
+  direction: rtl;
+  pointer-events: auto;
+  animation: farsiLintFadeIn 0.15s ease-out;
+}
+
+@keyframes farsiLintFadeIn {
+  from { opacity: 0; transform: translateY(4px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.farsi-lint-tooltip-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 6px;
+  font-size: 11px;
+  color: #94a3b8;
+}
+
+.farsi-lint-tooltip-replacement {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 8px;
+  font-size: 14px;
+  font-weight: 600;
+}
+
+.farsi-lint-tooltip-btn {
+  background: #2563eb;
+  color: white;
+  border: none;
+  padding: 4px 10px;
+  border-radius: 6px;
+  font-size: 12px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: background 0.15s ease;
+}
+
+.farsi-lint-tooltip-btn:hover {
+  background: #1d4ed8;
+}
